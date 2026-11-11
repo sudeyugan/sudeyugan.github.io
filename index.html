@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN" data-view="hello">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="苏的鱼干的个人主页。关于我、我做的小鱼，以及一次新的相遇。">
+  <meta name="theme-color" content="#f2f0e9">
+  <title>苏的鱼干 · 很高兴认识你</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <link rel="stylesheet" href="./assets/experience.css">
+  <link rel="stylesheet" href="./assets/art.css">
+  <link rel="stylesheet" href="./assets/water.css">
+  <link rel="stylesheet" href="./assets/current.css">
+  <script src="./assets/content.js" defer></script>
+  <script src="./assets/content-runtime.js" defer></script>
+  <script src="./assets/pager.js" defer></script>
+  <script src="./assets/xiaoyu/placements.js" defer></script>
+  <script src="./assets/video.js" defer></script>
+  <script src="./assets/pet.js" defer></script>
+  <script src="./assets/motion.js" defer></script>
+  <script src="./assets/art.js" defer></script>
+  <script src="./assets/water.js" defer></script>
+  <script src="./assets/main.js" defer></script>
+</head>
+<body>
+<canvas id="water-surface" aria-hidden="true"></canvas>
+<div class="scroll-story"><div class="experience-shell">
+  <a class="skip-link" href="#scene-hello">进入内容</a>
+  <header class="site-header">
+    <a class="brand" href="#hello" aria-label="苏的鱼干，回到首页"><svg class="brand-fish" viewBox="0 0 43 25" fill="none" aria-hidden="true"><path d="M3 13C7 2 24 1 31 12c-7 12-24 12-28 1Z" stroke="currentColor" stroke-width="1.8"/><path d="m30 12 10-9v19Z" fill="currentColor"/><circle cx="12" cy="10" r="1.5" fill="currentColor"/></svg><span data-name>苏的鱼干</span><span class="brand-dot">·</span></a>
+    <span class="header-note" data-copy="header.note">一点温柔。很多好奇心。</span>
+    <button class="index-toggle rolling-link" type="button" aria-expanded="false" aria-controls="site-index"><span class="rolling-words"><span>目录</span><span aria-hidden="true">INDEX</span></span><span class="index-symbol">＋</span></button>
+  </header>
+
+  <main class="scenes" id="main">
+    <section class="scene scene-hello is-active" id="scene-hello" aria-labelledby="hello-title" tabindex="-1">
+      <div class="scene-kicker"><span><i class="status-dot"></i> 欢迎。这里是我的个人主页。</span><span class="mono">A HUMAN, STILL BECOMING.</span></div>
+      <div class="name-composition"><span class="type-echo" aria-hidden="true">CURIOUS BY NATURE</span>
+        <p class="name-prelude" data-copy="home.intro">你好，我是</p>
+        <h1 class="kinetic-name" id="hello-title" aria-label="苏的鱼干"><span class="name-glyph" aria-hidden="true">苏</span><span class="name-glyph" aria-hidden="true">的</span><span class="name-glyph" aria-hidden="true">鱼</span><span class="name-glyph" aria-hidden="true">干</span><span class="name-spark" aria-hidden="true">✳</span></h1>
+        <svg class="signature-line" viewBox="0 0 450 50" aria-hidden="true"><path d="M4 30c83-30 180 15 254-4s130-11 185 1"/></svg><span class="name-annotation" data-copy="home.english">soft heart. curious mind.</span>
+        <span class="name-instruction"><span>↖</span> 字也有一点自己的脾气，试着拉一下。</span>
+      </div>
+      <div class="hello-bottom">
+        <p class="hello-statement" data-copy="home.statement">写代码。做东西。<br>也关心那些，<em>很小的感受。</em></p>
+        <div class="hello-portals">
+          <a class="portal about-portal" href="#about" data-cursor="认识我"><span class="portal-number mono">01</span><span class="portal-title" data-copy="home.aboutCard">这个人<br>是什么样的？</span><span class="portal-arrow">↗</span><span class="portal-footnote" data-copy="home.aboutNote">从三个词开始</span></a>
+          <a class="portal pet-portal" href="#xiaoyu" data-cursor="见小鱼"><span class="portal-number mono">02 / SELECTED WORK</span><span class="portal-title" data-copy="home.workCard">我做的<br>小鱼。</span><span class="portal-arrow">↗</span><span class="pet-teaser"><canvas id="teaser-canvas" width="160" height="230" aria-hidden="true"></canvas><img class="teaser-fallback" src="./assets/xiaoyu/neutral.png" alt="一隅中的小鱼" loading="lazy"></span><span class="portal-footnote" data-copy="home.workNote">一隅 · 我的 AI 伙伴</span></a>
+        </div>
+      </div>
+      <div class="current-work"><span class="mono" data-copy="home.current">正在认真做的事</span><strong data-copy="home.currentTitle">一隅 Yiyu</strong><span data-copy="home.currentBody">把想法、日常与 AI 伙伴，放进同一个温暖的数字空间。</span><span class="mini-flow"><b>IDEA</b><i></i><b>CODE</b><i></i><b>COMPANION</b></span></div>
+    </section>
+
+    <section class="scene scene-about" id="scene-about" aria-labelledby="about-title" tabindex="-1" hidden inert>
+      <div class="scene-kicker"><span>01 / 关于我</span><span class="mono">MORE THAN ONE WORD.</span></div>
+      <div class="about-composition">
+        <div class="word-selector" role="tablist" aria-label="从三个词认识我" aria-orientation="vertical">
+          <button class="about-word is-selected" id="word-gentle" role="tab" aria-selected="true" aria-controls="about-panel" data-word="gentle"><span class="word-index mono">01</span><span class="word-letters" data-copy="about.label0">温柔</span><span class="word-sign">↗</span></button>
+          <button class="about-word" id="word-curious" role="tab" aria-selected="false" aria-controls="about-panel" tabindex="-1" data-word="curious"><span class="word-index mono">02</span><span class="word-letters" data-copy="about.label1">有趣</span><span class="word-sign">✳</span></button>
+          <button class="about-word" id="word-maker" role="tab" aria-selected="false" aria-controls="about-panel" tabindex="-1" data-word="maker"><span class="word-index mono">03</span><span class="word-letters" data-copy="about.label2">会做</span><span class="word-sign">↗</span></button>
+        </div>
+        <div class="about-story" id="about-panel" role="tabpanel" aria-labelledby="word-gentle">
+          <div class="story-symbol" aria-hidden="true"><span class="symbol-orbit"></span><svg viewBox="0 0 180 160"><path id="story-path" d="M90 140C65 120 15 87 15 48 15 2 72-6 90 35c18-41 75-33 75 13 0 39-50 72-75 92Z"/></svg></div>
+          <p class="story-eyebrow mono">A SOFT HEART.</p><h2 id="about-title">让细节，<br>照顾一下感受。</h2>
+          <p class="story-body">有些人觉得我挺温柔的。<br>我想，这也会留在我做的东西里。<br>比如一个恰好的回应，一点不过分打扰的陪伴。</p>
+          <div class="story-note"><span class="note-line"></span><span>先从这些片段，慢慢认识我。</span></div>
+          <a class="underlined-link" href="#xiaoyu">这件事，被我做进了小鱼里 <span>↗</span></a>
+        </div>
+      </div>
+      <div class="about-details fragment-deck" aria-label="打开一些关于我的片段">
+        <button class="fragment-card" type="button" aria-expanded="false" data-fragment="0" data-cursor="翻开看看"><span class="fragment-number mono">01 / 一点温柔</span><span class="fragment-front"><i>⌁</i>回应，可以很轻。</span><span class="fragment-back" hidden>一个恰好的回应，<br>一点不过分打扰的陪伴。</span><span class="fragment-corner" aria-hidden="true">↗</span></button>
+        <button class="fragment-card" type="button" aria-expanded="false" data-fragment="1" data-cursor="翻开看看"><span class="fragment-number mono">02 / 一点好奇</span><span class="fragment-front"><i>✳</i>如果，真的做出来呢？</span><span class="fragment-back" hidden>让一个小想法，<br>长成可以亲手体验的东西。</span><span class="fragment-corner" aria-hidden="true">↗</span></button>
+        <button class="fragment-card" type="button" aria-expanded="false" data-fragment="2" data-cursor="翻开看看"><span class="fragment-number mono">03 / 一点认真</span><span class="fragment-front"><i>↗</i>从代码，到感受。</span><span class="fragment-back" hidden>把界面、AI 和本地应用连起来，<br>也把体验的最后一点做好。</span><span class="fragment-corner" aria-hidden="true">↗</span></button>
+      </div>
+      <div class="scene-aside"><span>挑一个词，换个角度认识我。</span><span class="mono">THE SAME PERSON. DIFFERENT SIDES.</span></div>
+    </section>
+
+    <section class="scene scene-xiaoyu" id="scene-xiaoyu" aria-labelledby="xiaoyu-title" tabindex="-1" hidden inert>
+      <div class="scene-kicker"><span>02 / 一隅 YIYU · 小鱼</span><button class="underlined-link technical-toggle" type="button" aria-expanded="false" aria-controls="technical-sheet">她是怎么做出来的？ <span>↗</span></button></div>
+      <div class="xiaoyu-composition">
+        <div class="pet-description"><span class="mono pet-caption">A LITTLE COMPANION, WITH CARE.</span><h2 id="xiaoyu-title">她叫<span>小鱼</span><i>。</i></h2><p data-copy="pet.tagline">让陪伴，<br>从屏幕里多走出来一点。</p><span class="project-context" data-copy="pet.context">我做的「一隅」里，有这样一个伙伴。<br>可以和她说话，也可以只是安静待在一起。</span><div class="pet-format" role="group" aria-label="选择小鱼的形态"><button type="button" data-format="webm" aria-pressed="true" data-copy="pet.videoLabel">WebM 形象</button><button type="button" data-format="desktop" aria-pressed="false" data-copy="pet.desktopLabel">桌面小鱼</button></div><span class="pet-format-note">原项目的真实角色素材 · 网页独立演示</span><div class="gesture-guide"><span class="mono">LITTLE GESTURES, LITTLE REPLIES.</span><p>不用只按按钮，试着靠近她。</p><div><button type="button" data-gesture="pat"><span>点点头发</span><i>理理头发 ↗</i></button><button type="button" data-gesture="shy"><span>点点身体</span><i>害羞一下 ↗</i></button><button type="button" data-gesture="stretch"><span>按住一会儿</span><i>伸个懒腰 ↗</i></button><button type="button" data-gesture="wave"><span>左右挥动鼠标</span><i>打个招呼 ↗</i></button><button type="button" data-gesture="celebrate"><span>拖动后放下</span><i>庆祝新位置 ↗</i></button></div></div></div>
+        <div class="pet-space" id="pet-space" aria-label="小鱼的互动区域">
+          <div class="pet-backtype" aria-hidden="true">小<br>鱼</div><div class="pet-floor" aria-hidden="true"></div><div class="pet-signal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="pet-speech" id="pet-speech" role="status">你好呀，我是小鱼。<span>把手伸过来，认识一下？</span></div>
+          <button class="pet-actor" data-renderer="webm" id="pet-actor" type="button" aria-label="点击头部理头发，点击身体害羞，长按伸懒腰，拖动移动；键盘 Enter 触碰，方向键移动" data-cursor="靠近一点"><span class="pet-video-stage"><video class="pet-video" id="pet-video" muted playsinline preload="metadata" aria-hidden="true"></video></span><canvas id="pet-canvas" width="600" height="800" aria-hidden="true"></canvas><img class="pet-static" src="./assets/xiaoyu/neutral.png" alt="银白长发、蓝眼睛的小鱼"><span class="pet-ground-shadow" aria-hidden="true"></span></button>
+          <div class="pet-particles" aria-hidden="true"></div><span class="pet-coordinate mono" aria-hidden="true">X <b id="pet-x">0</b> · Y <b id="pet-y">0</b></span>
+          <span class="drag-instruction" data-copy="pet.dragHint">拖到你喜欢的位置。或者，点点她。</span><button class="reset-pet" type="button" aria-label="让小鱼回到原位">↺</button>
+        </div>
+        <div class="pet-interaction"><div class="capability-showcase"><div class="capability-tabs" role="tablist" aria-label="小鱼的能力"><button type="button" role="tab" id="capability-tab-0" aria-selected="true" aria-controls="capability-panel">陪你聊聊</button><button type="button" role="tab" id="capability-tab-1" aria-selected="false" aria-controls="capability-panel" tabindex="-1">日常协助</button><button type="button" role="tab" id="capability-tab-2" aria-selected="false" aria-controls="capability-panel" tabindex="-1">有边界的 AI</button></div><div class="capability-panel" id="capability-panel" role="tabpanel" aria-labelledby="capability-tab-0"><h3></h3><div class="demo-prompt"></div><div class="demo-reply"></div><ol class="capability-steps"><li></li><li></li><li></li></ol><p class="capability-note"></p><button class="play-capability" type="button">播放这个片段 <span>↗</span></button></div></div><span class="interaction-label mono">SAY HELLO TO XIAOYU</span><div class="pet-actions" role="group" aria-label="和小鱼互动"><button type="button" data-action="wave"><span>↗</span>打个招呼</button><button type="button" data-action="pat"><span>♡</span>摸摸头</button><button type="button" data-action="sleep"><span>☾</span>歇一会儿</button></div><button class="action-library-toggle" type="button" aria-expanded="false" aria-controls="action-library" data-webm-only>小鱼的动作库 <span>6 个动作 ＋</span></button><div class="action-library" id="action-library" role="group" aria-labelledby="action-library-title" hidden><header><span id="action-library-title">换一个心情，认识小鱼。</span><button type="button" class="action-library-close" aria-label="关闭动作库">×</button></header><div class="action-library-grid"><button type="button" data-action="listen" aria-pressed="false"><span>◖</span><b>听我说</b></button><button type="button" data-action="think" aria-pressed="false"><span>⌁</span><b>想一想</b></button><button type="button" data-action="stretch" aria-pressed="false"><span>↟</span><b>伸个懒腰</b></button><button type="button" data-action="shy" aria-pressed="false"><span>◡</span><b>害羞一下</b></button><button type="button" data-action="celebrate" aria-pressed="false"><span>✳</span><b>庆祝一下</b></button><button type="button" data-action="hair" aria-pressed="false"><span>〰</span><b>理理头发</b></button></div><span class="action-library-note">选一个动作，看看她的回应。</span></div><div class="pet-state"><i class="status-dot"></i><span id="pet-state">在这里，陪你待一会儿。</span></div><div class="pet-quiet-note" data-copy="pet.disclaimer">眨眼、姿态与反馈会持续发生。<br>对白为本地演示，不连接真实 AI 或私人数据。</div></div>
+      </div>
+      <aside class="technical-sheet" id="technical-sheet" aria-labelledby="technical-title" hidden inert><button class="sheet-close" type="button" aria-label="关闭小鱼实现说明">×</button><span class="mono">BEHIND THE LITTLE THINGS</span><h3 id="technical-title" data-copy="technical.title">可爱的背后，<br>也有认真的工程。</h3><p>角色只是看得到的那一层。一隅还把 AI、工具和本地应用连接在一起。</p><div class="pipeline"><button type="button" data-pipeline="0" aria-pressed="true"><span class="mono">01</span>感知与交互</button><span>↓</span><button type="button" data-pipeline="1" aria-pressed="false"><span class="mono">02</span>Agent 与工具</button><span>↓</span><button type="button" data-pipeline="2" aria-pressed="false"><span class="mono">03</span>权限与本地数据</button></div><p class="pipeline-description" id="pipeline-description">原项目支持指针响应、角色动作与语音交互。网页保留轻量的拖动、姿态与陪伴体验。</p><div class="technical-stack">React · TypeScript · Tauri · Rust · SQLite</div><span class="source-note" data-copy="technical.note">说明依据本地一隅源码与文档。<br>这里展示实现思路，不开放真实应用工具。</span></aside>
+    </section>
+
+    <section class="scene scene-contact" id="scene-contact" aria-labelledby="contact-title" tabindex="-1" hidden inert>
+      <div class="scene-kicker"><span>03 / 认识一下</span><span><i class="status-dot"></i> 很高兴，你愿意停留一下。</span></div>
+      <div class="contact-composition"><div class="contact-heading"><span class="mono">STRANGERS, UNTIL WE SAY HELLO.</span><h2 id="contact-title"><span class="hello-word">hello,</span><span class="friend-word">friend<span>✳</span></span></h2><p>我们可以从一句<span>「你好」</span>开始。</p><div class="hello-postcard"><button type="button" class="postcard-stamp" aria-label="盖一枚问候邮戳" data-cursor="盖个章">HI<span>TO YOU</span></button><span class="postcard-postmark" aria-hidden="true">HELLO, FRIEND.<br><small>很高兴遇见你</small></span><p data-copy="contact.postcard">从网页上的一次停留，<br>到生活里的一次新相遇。</p><span class="postcard-address">TO / <b data-name>苏的鱼干</b><svg viewBox="0 0 150 36" aria-hidden="true"><path d="M2 25c30-40 55 30 85-3s50 4 60-8m-11-6 12 5-9 9"/></svg></span><button type="button" class="postcard-flip" aria-expanded="false" aria-controls="postcard-reverse" data-cursor="翻过来">翻到背面 ↗</button><div class="postcard-reverse" id="postcard-reverse" hidden><span class="mono">A NOTE TO YOU</span><p>不必准备一个完美的开场。<br>一句你好，一点好奇，<br>或者分享刚刚想到的小事。</p><span>很高兴认识你。<i>⌁</i></span></div></div><span class="postcard-hint">这张明信片，可以翻面，也可以拖一拖。</span></div><div class="contact-right"><div class="opener-picker"><span class="mono">START ANYWHERE</span><div class="opener-tabs" role="tablist" aria-label="选择聊天开场"><button role="tab" id="opener-0" aria-selected="true" aria-controls="opener-panel" type="button">聊技术</button><button role="tab" id="opener-1" aria-selected="false" aria-controls="opener-panel" tabindex="-1" type="button">聊想法</button><button role="tab" id="opener-2" aria-selected="false" aria-controls="opener-panel" tabindex="-1" type="button">随便聊</button></div><div class="opener-panel" id="opener-panel" role="tabpanel" aria-labelledby="opener-0"><span class="opener-quote">“</span><p>你是怎么把小鱼做出来的？<br>我也想做点有意思的东西。</p><button class="copy-opener" type="button"><span>复制这个开场</span><span>↗</span></button></div></div><div class="contact-links"><span class="contact-label">找到苏的鱼干</span><div data-contact="wechat"><span>微信</span><span class="contact-pending">稍后补上</span></div><div data-contact="email"><span>邮箱</span><span class="contact-pending">稍后补上</span></div><div data-contact="github"><span>GitHub</span><span class="contact-pending">稍后补上</span></div></div><span class="contact-footnote" role="status" data-copy="contact.pending">联系方式还在整理。先记住「苏的鱼干」吧。</span><button class="contact-current" type="button" aria-label="轻轻推一下纸船" data-cursor="推推纸船"><svg aria-hidden="true" viewBox="0 0 440 100"><path class="current-line" d="M0 70Q55 48 110 70T220 70T330 70T440 70"/><path class="current-line" d="M0 82Q55 60 110 82T220 82T330 82T440 82"/><g class="paper-boat"><path d="m0 0 25 13L50 0 38 22H12Z"/><path d="m12 0 13-24L38 0M25-24V13M12 0H38"/></g></svg><span class="mono">LET A LITTLE CURIOSITY DRIFT.</span><span class="boat-invitation">游近一点，或轻轻推一下。</span></button></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span class="footer-time mono"><span id="local-time">--:--</span> CST <span class="footer-time-dot">·</span> <span class="scroll-hint">向下滚动，慢慢认识我 ↓</span></span><nav class="scene-nav" aria-label="选择你想看的内容"><a href="#hello" aria-current="page" data-nav="hello"><span class="nav-index">00</span><span class="nav-name" data-copy="nav.hello">你好</span><span class="nav-dot"></span></a><a href="#about" data-nav="about"><span class="nav-index">01</span><span class="nav-name" data-copy="nav.about">关于我</span><span class="nav-dot"></span></a><a href="#xiaoyu" data-nav="xiaoyu"><span class="nav-index">02</span><span class="nav-name" data-copy="nav.xiaoyu">小鱼</span><span class="nav-dot"></span></a><a href="#contact" data-nav="contact"><span class="nav-index">03</span><span class="nav-name" data-copy="nav.contact">认识一下</span><span class="nav-dot"></span></a><span class="nav-active-line"></span><span class="scroll-meter" aria-hidden="true"><i></i></span></nav><button class="motion-toggle" type="button" aria-pressed="false" aria-label="减弱动效"><span class="motion-indicator"><i></i><i></i><i></i></span><span class="motion-label">动效开启</span></button></footer>
+</div><div class="scroll-stops" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+  <nav class="site-index" id="site-index" aria-label="全部内容" hidden inert><span class="index-caption mono">NO PARTICULAR ORDER. FOLLOW YOUR CURIOSITY.</span><a href="#hello"><span class="mono">00</span><span>你好。</span><span>↗</span></a><a href="#about"><span class="mono">01</span><span>关于我。</span><span>↗</span></a><a href="#xiaoyu"><span class="mono">02</span><span>见见小鱼。</span><span>↗</span></a><a href="#contact"><span class="mono">03</span><span>认识一下。</span><span>↗</span></a></nav>
+
+  <div class="pointer-follower" aria-hidden="true"><svg class="cursor-shape" viewBox="-3 -13 39 26"><g class="cursor-fish"><path class="fish-tail" d="M23 0c4-2 6-6 11-7-1 4-3 6-5 7 3 1 5 4 6 7-5-1-8-5-12-7Z"/><path class="fish-body" d="M0 0C6-7.5 16-8 25 0 17 8 6 7.5 0 0Z"/><path class="fish-fin" d="M13 4c2 4 5 5 7 4l-3-5"/><path class="fish-shine" d="M6-2.6c4-2.8 8-2.9 12-.6"/><path class="fish-gill" d="M11-3q-2 3 0 6"/><circle class="fish-eye" cx="6.8" cy="-.8" r="1.15"/></g></svg><i class="cursor-halo"></i><span></span></div>
+  <div class="transition-art" aria-hidden="true"><svg viewBox="0 0 180 1000" preserveAspectRatio="none"><path d="M90-100C-60 130 240 250 90 480S-30 790 90 1100"/><path d="M112-100C-38 130 262 250 112 480S-8 790 112 1100"/></svg><span class="transition-word"></span><i></i></div><div class="art-bursts" aria-hidden="true"></div><div class="toast" role="status" hidden></div>
+  <noscript><style>.scene[hidden]{display:block!important;position:relative;min-height:100vh}.scene{position:relative!important;height:auto!important;min-height:100vh}.scenes{height:auto!important;overflow:visible!important}body{height:auto!important;overflow:auto!important}.site-footer{position:relative!important}.pet-static,.teaser-fallback{display:block!important}.pet-actor canvas,.pet-teaser canvas{display:none!important}</style><p>启用 JavaScript 后，可以切换场景、拖动文字并和小鱼互动。</p></noscript>
+</body>
+</html>

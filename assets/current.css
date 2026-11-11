@@ -1,0 +1,37 @@
+/* Gesture-sized water and ink. The page itself stays still. */
+#water-surface{width:320px;height:256px;opacity:1;z-index:100;contain:strict}
+.current-card,.current-link{position:relative}
+.postcard-flip.current-link{position:absolute}
+.current-edge{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:5;opacity:0;transition:opacity .28s ease-out;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.is-current-near>.current-edge{opacity:1}
+.current-edge-ink{stroke:#698d83;stroke-width:1.2;vector-effect:non-scaling-stroke}
+.current-edge-light{stroke:#fffef5;stroke-width:3.2;opacity:.8;vector-effect:non-scaling-stroke}
+.current-link>.current-edge .current-edge-ink{stroke:#bc8a6d;stroke-width:1.1}
+.current-link>.current-edge .current-edge-light{stroke:#faf7ed;opacity:.7;stroke-width:2.6}
+.current-sheen{position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:4;opacity:0;background:radial-gradient(ellipse 100px 70px at var(--current-x,50%) var(--current-y,50%),#ffffff30 0%,#b2d4ce24 35%,transparent 80%);transition:opacity .35s ease-out}
+.is-current-near>.current-sheen{opacity:1}
+.pet-portal>.current-edge .current-edge-ink{stroke:#7b98b5}
+.scene-nav .current-edge .current-edge-ink{stroke:#a2ac8d;stroke-width:.85}
+.fragment-card.is-current-near .fragment-corner{color:#a57a61}
+.pointer-follower>span{border:0;border-radius:0;background:transparent;backdrop-filter:none;box-shadow:none;padding:2px 3px;color:#869987;font-size:8px;letter-spacing:.5px;left:18px;top:28px}
+.cursor-shape{filter:drop-shadow(0 1px 1px #3a615220)}
+.fish-body,.fish-tail{fill:#456c60;stroke:#f7f7ee;stroke-width:1}
+.fish-tail{animation-duration:var(--fin-duration,.85s)}
+.fish-fin{fill:#789b84;stroke:#f6f7ec;stroke-width:.6;transform-origin:14px 4px;animation:little-fin 1.6s ease-in-out infinite alternate}
+.fish-shine{fill:none;stroke:#c4d4b77a;stroke-width:.9;stroke-linecap:round}
+.fish-gill{fill:none;stroke:#d7e1ca88;stroke-width:.55;stroke-linecap:round}
+.fish-eye{fill:#f9f9e9;stroke:none}
+.pointer-follower[data-affinity=card] .fish-body,.pointer-follower[data-affinity=card] .fish-tail{fill:#5a817a}
+.pointer-follower[data-affinity=link] .fish-body,.pointer-follower[data-affinity=link] .fish-tail{fill:#b68366}
+.pointer-follower[data-affinity=boat] .fish-body,.pointer-follower[data-affinity=boat] .fish-tail{fill:#738c7a}
+.pointer-follower .cursor-halo{display:none}
+.contact-current{display:block;pointer-events:auto;text-align:inherit;cursor:pointer}
+.contact-current>.boat-invitation{display:block;text-align:right;font:9px var(--sans);letter-spacing:.7px;color:#93a17b;line-height:1.7;margin-top:9px}
+.paper-boat{will-change:translate}
+.contact-current:hover .paper-boat{stroke:#a8795a}
+.contact-current:focus-visible{outline-offset:7px;outline-color:#9baa80}
+@keyframes little-fin{to{transform:rotate(-15deg) scaleY(.75)}}
+html[data-motion=reduced] .current-edge,html[data-motion=reduced] .current-sheen{display:none}
+html[data-motion=reduced] .fish-fin{animation:none}
+@media(hover:none),(pointer:coarse){.current-edge,.current-sheen{display:none}}
+@media(max-width:600px){.contact-current>.boat-invitation{font-size:8px;margin-top:7px}}
