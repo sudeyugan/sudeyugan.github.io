@@ -1,0 +1,210 @@
+/* Full-height, native scrolling spreads. Original artwork carries each scene. */
+.interest-gallery{scroll-snap-type:y proximity;scroll-padding-block:0;scrollbar-width:none}
+.interest-gallery::-webkit-scrollbar{display:none}
+.interest-gallery .collection-scene{gap:0}
+.interest-gallery .channel-composition,.interest-gallery .channel-music{height:var(--spread-height);min-height:0;scroll-snap-align:start}
+.collection-ornament{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.collection-ornament .source-image{position:absolute;display:block;object-fit:contain;user-select:none;filter:drop-shadow(7px 14px 15px #312c3526)}
+.collection-ornament svg{position:absolute;display:block;overflow:visible}
+.interest-gallery .channel-composition .channel-kicker{top:6%;left:6%;font-size:8px;letter-spacing:1.6px}
+.interest-gallery .channel-composition .channel-frame{top:6%;right:5%;font-size:8px}
+.interest-gallery .channel-composition .channel-title{left:6%;top:26%;bottom:auto;max-width:38%;z-index:5;opacity:1}
+.interest-gallery .channel-composition .channel-title h3{font-size:clamp(32px,4.2vw,64px);line-height:1.3;letter-spacing:-1.8px}
+.interest-gallery .channel-composition .channel-english{font-size:8px;letter-spacing:2px;margin-bottom:15px}
+.interest-gallery .channel-composition .channel-badge{font-size:8px;letter-spacing:1px;margin-top:17px}
+.interest-gallery .channel-composition .channel-note{left:6%;right:auto;bottom:20%;width:29%;z-index:5;opacity:1}
+.interest-gallery .channel-composition .channel-note>p{font-size:13px;line-height:2;color:#7b795e}
+.interest-gallery .channel-composition .channel-note>i{font-size:38px;margin-bottom:8px}
+.interest-gallery .channel-composition .channel-visual{z-index:3;max-height:480px;transition:rotate .8s var(--ease),translate .8s var(--ease),filter .6s}
+.interest-gallery .channel-composition .channel-expand{font-size:10px;background:#243c3380;color:#f4eee1;padding:5px 7px}
+.collection-tags{position:absolute;left:6%;bottom:6.5%;display:flex;gap:17px;list-style:none;margin:0;padding:0;z-index:5;color:#8f957e;font-size:10px;letter-spacing:1px}
+.collection-tags>li+li:before{content:'·';display:inline-block;margin-right:17px;opacity:.5}
+.collection-action{position:absolute;right:6%;bottom:6%;display:flex;align-items:center;gap:9px;z-index:6;font-size:10px;letter-spacing:1px;color:#797d63;min-height:32px;padding:2px 0}
+.collection-action-symbol{display:grid;place-items:center;width:27px;height:27px;border:1px solid currentColor;border-radius:50%;font-size:15px;transition:rotate .6s,background .5s}
+.collection-action:hover .collection-action-symbol{rotate:16deg;background:#e1d9bb66}
+.collection-action[aria-pressed=true] .collection-action-symbol{rotate:45deg}
+.collection-marginalia{position:absolute;font:8px/1.8 var(--mono);letter-spacing:2px;color:#a29173}
+.collection-ornament *{animation-play-state:paused!important}
+.is-reading .collection-ornament *{animation-play-state:running!important}
+/* Harry Potter: three original covers, the arched window and an unopened letter. */
+.interest-gallery .channel-composition[data-kind=novel]{background:radial-gradient(ellipse at 75% 15%,#e4d4ae80,transparent 65%),#f0e9d9}
+.interest-gallery .channel-composition[data-kind=novel] .channel-word{left:4%;top:8%;font-size:15vw;color:#ae956c1c}
+.interest-gallery .channel-composition[data-kind=novel] .channel-visual{left:68%;top:48%;height:76%;aspect-ratio:334/500;rotate:-4deg}
+.hp-chamber{left:44%;top:16%;height:66%;rotate:-15deg;opacity:.9}
+.hp-azkaban{left:73%;top:13%;height:66%;rotate:12deg;opacity:.94}
+.hogwarts-window{right:1%;top:-6%;width:63%;height:108%;color:#b19d70;stroke:currentColor;stroke-width:.7;opacity:.35}
+.window-stars{animation:window-glimmer 5s ease-in-out infinite alternate}
+[data-kind=novel] .collection-marginalia{left:6%;top:15%}
+.novel-envelope{position:absolute;right:7.5%;bottom:16%;width:113px;height:59px;z-index:4;rotate:7deg;pointer-events:none;filter:drop-shadow(2px 7px 5px #7c694b22);perspective:500px}
+.envelope-back{position:absolute;inset:0;background:#dfcaa3;border:1px solid #bca17a;clip-path:polygon(0 0,50% 52%,100% 0,100% 100%,0 100%)}
+.envelope-flap{position:absolute;inset:0;background:#e7d5b4;clip-path:polygon(0 0,100% 0,50% 57%);transform-origin:top;transition:transform .8s var(--ease);z-index:2}
+.envelope-letter{position:absolute;left:9%;right:9%;top:4%;height:90%;padding:9px 6px;font-size:7px;line-height:1.7;background:#f6efdb;color:#846e4f;transition:translate .8s var(--ease);border:1px solid #cbb98e}
+.novel-envelope>i{position:absolute;left:calc(50% - 10px);top:22px;width:20px;height:20px;border-radius:50%;background:#9b4a3b;color:#d9b584;display:grid;place-items:center;font:italic 11px Georgia;z-index:3;box-shadow:inset 0 0 0 2px #692d2629;transition:opacity .4s}
+[data-kind=novel].is-prop-active .envelope-flap{transform:rotateX(180deg)}
+[data-kind=novel].is-prop-active .envelope-letter{translate:0 -38px}
+[data-kind=novel].is-prop-active .novel-envelope>i{opacity:0}
+/* Second Girlfriend: two original volumes, an unsettled thread and a bookmark. */
+.interest-gallery .channel-composition[data-kind=lightnovel]{background:linear-gradient(115deg,#eee1e3,#e9e1e9 65%,#e8e4e8)}
+.interest-gallery .channel-composition[data-kind=lightnovel] .channel-word{display:none}
+.interest-gallery .channel-composition[data-kind=lightnovel] .channel-visual{left:73%;top:48%;height:76%;aspect-ratio:705/1000;rotate:6deg}
+.interest-gallery .channel-composition[data-kind=lightnovel] .channel-title h3{color:#815c6b}
+.interest-gallery .channel-composition[data-kind=lightnovel] .channel-note>p{color:#8d737b}
+.second-cover{left:44%;top:13%;height:72%;rotate:-10deg}
+.second-number{position:absolute;left:8%;top:2%;font:italic 250px/1 Georgia,serif;color:#b88a9d18;letter-spacing:-15px}
+.second-number>span{font-size:110px;letter-spacing:-10px;margin-left:15px}
+.relationship-thread{inset:0;width:75%;height:100%;color:#ac7188;stroke:currentColor;stroke-width:1;opacity:.28}
+.thread-return{stroke-dasharray:4 10;animation:thread-travel 30s linear infinite}
+[data-kind=lightnovel] .collection-marginalia{left:6%;top:16%;font-family:var(--sans);letter-spacing:1px;color:#a48691}
+.reading-bookmark{position:absolute;right:10%;top:7%;padding:12px 8px 18px;background:#9b5a72;color:#eee0df;font:7px/1.7 var(--mono);letter-spacing:1px;clip-path:polygon(0 0,100% 0,100% 100%,50% 88%,0 100%);translate:0 -100px;rotate:6deg;transition:translate .8s var(--ease);z-index:5}
+[data-kind=lightnovel].is-prop-active .reading-bookmark{translate:0 0}
+[data-kind=lightnovel] .collection-action{color:#9b6b7c}
+/* Jian Ke: the official cover, enlarged illustration fragments and a quiet signal. */
+.interest-gallery .channel-composition[data-kind=webnovel]{background:#14232c;color:#b6c9c8}
+.interest-gallery .channel-composition[data-kind=webnovel] .channel-word{font:600 clamp(150px,22vw,310px)/1 var(--sans);top:13%;left:3%;color:#c4d3d20c}
+.interest-gallery .channel-composition[data-kind=webnovel] .channel-visual{left:70%;top:48%;height:77%;aspect-ratio:3/4;rotate:-3deg;box-shadow:12px 15px 30px #0006}
+.interest-gallery .channel-composition[data-kind=webnovel] .channel-title{top:22%}
+.interest-gallery .channel-composition[data-kind=webnovel] .channel-title h3{color:#dce3dc;font-size:clamp(60px,7vw,106px);letter-spacing:10px}
+.interest-gallery .channel-composition[data-kind=webnovel] .channel-english,.interest-gallery .channel-composition[data-kind=webnovel] .channel-badge{color:#9db4b1}
+.interest-gallery .channel-composition[data-kind=webnovel] .channel-kicker,.interest-gallery .channel-composition[data-kind=webnovel] .channel-frame{color:#8ba5aa}
+.interest-gallery .channel-composition[data-kind=webnovel] .channel-note>p{color:#afc2c1}
+.interest-gallery .channel-composition[data-kind=webnovel] .channel-note>i{color:#9ab7b3}
+.jianke-backdrop{right:-9%;top:-21%;height:150%;width:75%;object-fit:cover!important;opacity:.17;filter:blur(1px)!important;mask-image:linear-gradient(90deg,transparent,#000 38%)}
+.archive-orbit{right:-2%;top:-17%;width:70%;height:132%;stroke:#83a9c2;stroke-width:.65;opacity:.15;rotate:-17deg}
+.archive-caption{position:absolute;left:6%;top:14%;font:9px var(--mono);letter-spacing:3px;color:#77928f}
+.archive-dot{fill:#bc9963;stroke:none;transition:fill .7s}
+[data-kind=webnovel].is-prop-active .archive-orbit{opacity:.5}
+[data-kind=webnovel].is-prop-active .archive-dot{fill:#e8c07d;filter:drop-shadow(0 0 7px #e6bb83)}
+[data-kind=webnovel] .collection-action,[data-kind=webnovel] .collection-tags{color:#92aaa8}
+/* Magi: original key visuals and logo, arranged as a bright adventure spread. */
+.interest-gallery .channel-composition[data-kind=anime]{background:radial-gradient(ellipse at 71% 44%,#e4dbc0,#eae5d7 67%)}
+.interest-gallery .channel-composition[data-kind=anime] .channel-word{display:none}
+.interest-gallery .channel-composition[data-kind=anime] .channel-visual{left:81%;top:49%;height:95%;width:auto;aspect-ratio:1126/1427;rotate:3deg;box-shadow:5px 8px 24px #75614329}
+.interest-gallery .channel-composition[data-kind=anime] .channel-visual>img{object-fit:contain}
+.interest-gallery .channel-composition[data-kind=anime] .channel-title{top:46%;left:7%;max-width:37%}
+.interest-gallery .channel-composition[data-kind=anime] .channel-title h3{font-size:clamp(32px,3.8vw,56px);color:#78623c}
+.interest-gallery .channel-composition[data-kind=anime] .channel-english{display:none}
+.interest-gallery .channel-composition[data-kind=anime] .channel-note{left:7%;bottom:18%;width:29%}
+.magi-logo{left:7%;top:13%;width:17%;height:30%;filter:none!important}
+.magi-side{left:42%;top:10%;height:78%;rotate:-7deg}
+.magi-ruhs{inset:0;width:100%;height:100%;color:#fff8d7;filter:drop-shadow(0 0 3px #a9986b66)}
+.ruh{animation:ruh-float 9s ease-in-out infinite;transform-origin:center}.ruh-two{animation-delay:-3s}.ruh-three{animation-delay:-6s}
+[data-kind=anime] .collection-marginalia{left:7%;top:38%;color:#a18f6c}
+[data-kind=anime] .collection-action{right:5%;top:5%;bottom:auto;color:#af9a69}
+[data-kind=anime].is-prop-active .magi-ruhs{translate:0 -15px;filter:drop-shadow(0 0 7px #fff1bf);transition:translate 1.4s var(--ease)}
+/* Love Letter: snow, original stills and a card that can receive a stamp. */
+.interest-gallery .channel-composition[data-kind=film]{background:#eee8dd}
+.interest-gallery .channel-composition[data-kind=film] .channel-visual{inset:0;width:100%;height:100%;max-height:none;aspect-ratio:auto;translate:0 0;rotate:0;box-shadow:none;overflow:hidden;z-index:0}
+.interest-gallery .channel-composition[data-kind=film] .channel-visual>img{object-fit:cover;object-position:50% 30%;opacity:.78}
+.interest-gallery .channel-composition[data-kind=film] .channel-visual:after{background:linear-gradient(90deg,#eee8dd 3%,#eee8ddee 25%,#eee8dd50 58%,#eee8dd00 86%),linear-gradient(0deg,#eee8dd80,transparent 45%)}
+.interest-gallery .channel-composition[data-kind=film] .channel-word{display:block;left:4%;top:8%;font:italic 18vw/1 Georgia,serif;color:#846e6b0b}
+.interest-gallery .channel-composition[data-kind=film] .channel-title{top:25%;left:6%}
+.interest-gallery .channel-composition[data-kind=film] .channel-title h3{font-size:clamp(50px,6vw,85px);color:#795d62;text-shadow:none;letter-spacing:8px}
+.interest-gallery .channel-composition[data-kind=film] .channel-kicker,.interest-gallery .channel-composition[data-kind=film] .channel-frame{color:#9a8d7e}
+.interest-gallery .channel-composition[data-kind=film] .channel-english,.interest-gallery .channel-composition[data-kind=film] .channel-badge{color:#9f8c7c}
+.interest-gallery .channel-composition[data-kind=film] .channel-note{left:6%;bottom:18%;width:29%}
+.interest-gallery .channel-composition[data-kind=film] .channel-note>p{color:#8d7971;font-size:12px}
+.interest-gallery .channel-composition[data-kind=film] .channel-note>i{color:#b49d85}
+.film-contact-sheet{position:absolute;right:6%;bottom:16%;display:flex;gap:14px;rotate:-3deg}
+.film-contact-sheet>figure{position:relative;width:clamp(130px,15vw,210px);margin:0;padding:7px 7px 23px;background:#f7f3e9;box-shadow:2px 8px 15px #4e443929}
+.film-contact-sheet>figure:nth-child(2){rotate:6deg;translate:0 -12px}
+.film-contact-sheet .source-image{position:static;width:100%;height:100px;object-fit:cover;filter:none}
+.film-contact-sheet figcaption{position:absolute;bottom:7px;left:9px;font:7px var(--mono);color:#a08b78;letter-spacing:1px}
+.library-card{position:absolute;left:38%;top:57%;width:155px;padding:13px 14px 14px;background:repeating-linear-gradient(transparent 0 20px,#b49c8b25 21px,#0000 22px),#f3ecdc;border:1px solid #c2b19a90;rotate:9deg;z-index:4;color:#947866;box-shadow:2px 5px 10px #5c423315;pointer-events:none}
+.library-card>span{display:block;font:15px Georgia,serif;letter-spacing:4px;line-height:1.5}.library-card>small{font:6px var(--mono);letter-spacing:2px;color:#aa9581}
+.library-card>div{font-size:8px;margin-top:12px;line-height:1.5}.library-card b,.library-card i{font-weight:400;font-style:normal;padding-left:15px}
+.library-card>em{position:absolute;right:14px;bottom:14px;padding:5px;border:2px solid #9e584a99;border-radius:50%;font-style:normal;font-size:12px;letter-spacing:2px;color:#9e584a;rotate:-12deg;scale:1.5;opacity:0;transition:opacity .4s,scale .5s var(--ease)}
+[data-kind=film].is-prop-active .library-card>em{opacity:1;scale:1}
+[data-kind=film] .collection-action{color:#99786a}
+.film-snow{position:absolute;inset:0}.film-snow>i{position:absolute;top:-10px;left:var(--snow-x);width:3px;height:3px;border-radius:50%;background:#fff;opacity:.55;animation:snow-drift var(--snow-duration) var(--snow-delay) linear infinite}
+/* Outer Wilds: actual game views form a small ship log over the world. */
+.interest-gallery .channel-composition[data-kind=game] .channel-visual{inset:0;width:100%;height:100%;max-height:none;translate:0 0;rotate:0;z-index:0}
+.interest-gallery .channel-composition[data-kind=game] .channel-visual>img{object-position:50% 35%;filter:saturate(.8)}
+.interest-gallery .channel-composition[data-kind=game] .channel-visual:after{background:linear-gradient(90deg,#0c222cb0,transparent 73%),linear-gradient(0deg,#071d2ce0,transparent 80%)}
+.interest-gallery .channel-composition[data-kind=game] .channel-title{top:26%;left:6%;max-width:44%}
+.interest-gallery .channel-composition[data-kind=game] .channel-title h3{font-size:clamp(44px,5vw,74px);color:#efe3c7}
+.interest-gallery .channel-composition[data-kind=game] .channel-word{top:11%;left:3%;font-size:14vw;-webkit-text-stroke:1px #eee2ba24;color:transparent}
+.interest-gallery .channel-composition[data-kind=game] .channel-note{left:6%;bottom:19%;width:29%}
+.interest-gallery .channel-composition[data-kind=game] .channel-note>p{color:#c4cfbd}
+.interest-gallery .channel-composition[data-kind=game] .channel-kicker,.interest-gallery .channel-composition[data-kind=game] .channel-frame{color:#c7cfb9a6}
+.ship-log{position:absolute;right:5%;bottom:20%;width:41%;height:43%;z-index:2}
+.ship-log>figure{position:absolute;width:47%;height:67%;margin:0;padding:5px 5px 22px;background:#20363cd9;box-shadow:3px 8px 16px #0004;border:1px solid #bba6745c;rotate:-7deg}
+.ship-log>figure:nth-child(2){right:0;bottom:0;rotate:5deg}
+.ship-log .source-image{position:static;width:100%;height:100%;object-fit:cover;filter:none}
+.ship-log figcaption{position:absolute;bottom:6px;left:8px;font-size:8px;letter-spacing:1px;color:#c0b895}
+.ship-log>svg{inset:0;width:100%;height:100%;stroke:#c9af79;stroke-width:1;z-index:-1;opacity:.6}
+.log-route{stroke-dasharray:6 8;animation:log-travel 16s linear infinite}
+.signal-orbit{right:12%;top:-10%;width:33%;height:85%;stroke:#d2bc7b;stroke-width:.7;color:#d2bc7b;opacity:.18;rotate:23deg}
+[data-kind=game] .collection-action,[data-kind=game] .collection-tags{color:#c3c5aa}
+[data-kind=game] .collection-action{right:6%;top:6%;bottom:auto}
+.signal-needle{transform-origin:150px 150px;transition:rotate 1.4s var(--ease)}
+[data-kind=game].is-prop-active .signal-needle{rotate:135deg}
+[data-kind=game].is-prop-active .signal-orbit{opacity:.5}
+[data-kind=game].is-prop-active .ship-log>figure{border-color:#d6b56b;box-shadow:0 0 20px #e2ba6920}
+@keyframes window-glimmer{from{opacity:.4}to{opacity:1}}
+@keyframes thread-travel{to{stroke-dashoffset:-210}}
+@keyframes ruh-float{0%,100%{translate:0 0;rotate:0deg}50%{translate:8px -11px;rotate:3deg}}
+@keyframes snow-drift{from{translate:0 -10px}to{translate:20px 650px}}
+@keyframes log-travel{to{stroke-dashoffset:-180}}
+html[data-motion=reduced] .collection-ornament *,html[data-motion=reduced] .collection-action *{animation:none!important;transition:none!important}
+@media(min-width:1600px){.interest-gallery .channel-composition .channel-visual{max-height:550px}.collection-ornament .hp-chamber,.collection-ornament .hp-azkaban,.collection-ornament .second-cover{max-height:490px}.magi-side{max-height:560px}.interest-gallery .channel-composition[data-kind=film] .channel-visual,.interest-gallery .channel-composition[data-kind=game] .channel-visual{max-height:none}}
+@media(max-width:1000px) and (min-width:601px){
+ .interest-gallery .channel-composition .channel-title h3{font-size:35px}.interest-gallery .channel-composition .channel-note{width:31%;bottom:19%}.interest-gallery .channel-composition .channel-note>p{font-size:11px}
+ .interest-gallery .channel-composition[data-kind=novel] .channel-visual{height:64%;left:73%}.hp-chamber{height:57%;left:44%;top:23%}.hp-azkaban{height:56%;left:73%;top:23%}
+ .interest-gallery .channel-composition[data-kind=lightnovel] .channel-visual{height:67%;left:77%}.second-cover{height:59%;left:43%;top:20%}
+ .interest-gallery .channel-composition[data-kind=webnovel] .channel-visual{height:65%;left:74%}.interest-gallery .channel-composition[data-kind=webnovel] .channel-title h3{font-size:68px}
+ .magi-side{height:65%;left:42%;top:19%}.interest-gallery .channel-composition[data-kind=anime] .channel-visual{height:79%;left:86%}.magi-logo{width:22%;height:25%;top:16%}
+ .library-card{left:40%;top:22%;width:120px;padding:10px}.film-contact-sheet{right:5%;gap:8px;bottom:20%}.film-contact-sheet>figure{width:125px}.film-contact-sheet .source-image{height:75px}
+ .ship-log{width:47%;right:4%;height:37%}.collection-tags{font-size:9px;gap:11px}.collection-tags>li+li:before{margin-right:11px}
+}
+@media(max-width:600px){
+ .interest-gallery .channel-composition .channel-kicker{top:5%;font-size:6px;letter-spacing:1px}.interest-gallery .channel-composition .channel-frame{top:5%;font-size:6px}
+ .interest-gallery .channel-composition .channel-title{left:6%;top:auto;bottom:25%;max-width:87%}
+ .interest-gallery .channel-composition .channel-title h3{font-size:29px;line-height:1.3;letter-spacing:-1px}
+ .interest-gallery .channel-composition .channel-english{font-size:6px;letter-spacing:1px;margin-bottom:7px}.interest-gallery .channel-composition .channel-badge{font-size:6px;margin-top:8px}
+ .interest-gallery .channel-composition .channel-note{left:6%;bottom:11.5%;width:73%}.interest-gallery .channel-composition .channel-note>p{font-size:11px;line-height:1.85;margin:0}.interest-gallery .channel-composition .channel-note>i{display:none}
+ .interest-gallery .channel-composition .channel-visual{max-height:none}.interest-gallery .channel-composition .channel-expand{font-size:8px;right:5px;bottom:5px;padding:4px}
+ .collection-tags{bottom:4.7%;font-size:8px;letter-spacing:.3px;gap:10px}.collection-tags>li+li:before{margin-right:10px}
+ .collection-action{right:6%;bottom:4%;font-size:8px;gap:5px;min-height:28px}.collection-action-symbol{width:23px;height:23px;font-size:12px}
+ .collection-marginalia{font-size:6px;letter-spacing:1px}
+ .interest-gallery .channel-composition[data-kind=novel] .channel-word{font-size:29vw;top:12%}
+ .interest-gallery .channel-composition[data-kind=novel] .channel-visual{left:57%;top:36%;height:49%;rotate:-4deg}.hp-chamber{left:17%;top:14%;height:43%;rotate:-15deg}.hp-azkaban{left:63%;top:13%;height:44%;rotate:12deg}
+ .hogwarts-window{right:-24%;top:-6%;width:120%;height:88%;opacity:.27}.novel-envelope{right:8%;bottom:13%;width:64px;height:37px;rotate:9deg}.envelope-letter{padding:4px 3px;font-size:5px}.novel-envelope>i{width:14px;height:14px;left:calc(50% - 7px);top:15px;font-size:8px}[data-kind=novel].is-prop-active .envelope-letter{translate:0 -27px}
+ [data-kind=novel] .collection-marginalia{left:6%;top:9%}.action-letter .collection-action-symbol{display:none}
+ .interest-gallery .channel-composition[data-kind=lightnovel] .channel-visual{left:65%;top:36%;height:51%;rotate:5deg}.second-cover{left:19%;top:13%;height:46%;rotate:-10deg}.second-number{left:3%;top:0;font-size:170px}.second-number>span{font-size:80px}.relationship-thread{width:110%;height:78%;top:2%;left:-9%}
+ [data-kind=lightnovel] .collection-marginalia{top:9%;font-size:6px;left:6%;letter-spacing:0}.reading-bookmark{right:9%;top:10%;font-size:5px;padding:7px 6px 13px}.action-bookmark .collection-action-symbol{display:none}
+ .interest-gallery .channel-composition[data-kind=webnovel] .channel-visual{left:68%;top:37%;height:52%;aspect-ratio:3/4;rotate:-3deg}.interest-gallery .channel-composition[data-kind=webnovel] .channel-title{left:6%;bottom:36%;max-width:36%}.interest-gallery .channel-composition[data-kind=webnovel] .channel-title h3{font-size:47px;letter-spacing:3px}.interest-gallery .channel-composition[data-kind=webnovel] .channel-english{font-size:6px}
+ .interest-gallery .channel-composition[data-kind=webnovel] .channel-note{bottom:16%;width:83%}.jianke-backdrop{width:100%;right:-15%;height:120%;top:-5%}.archive-orbit{width:120%;right:-12%;height:100%;top:-7%;opacity:.2}.archive-caption{top:12%;font-size:7px}.action-signal{bottom:4%}
+ .interest-gallery .channel-composition[data-kind=anime] .channel-visual{left:79%;top:35%;height:64%;width:auto;aspect-ratio:1126/1427;rotate:3deg}.magi-side{left:29%;top:15%;height:49%;rotate:-9deg}.magi-logo{left:4%;top:12%;width:28%;height:19%}
+ .interest-gallery .channel-composition[data-kind=anime] .channel-title{left:6%;top:auto;bottom:25%;max-width:88%}.interest-gallery .channel-composition[data-kind=anime] .channel-title h3{font-size:29px}.interest-gallery .channel-composition[data-kind=anime] .channel-note{left:6%;bottom:12%;width:82%}
+ [data-kind=anime] .collection-marginalia{display:none}[data-kind=anime] .collection-action{right:5%;top:6%;bottom:auto}.action-ruh>span:last-child{display:none}.magi-ruhs{width:120%;left:-12%;height:90%}
+ .interest-gallery .channel-composition[data-kind=film] .channel-visual{inset:0;width:100%;height:100%;translate:0 0;rotate:0}.interest-gallery .channel-composition[data-kind=film] .channel-visual>img{object-position:54% 35%;opacity:.75}
+ .interest-gallery .channel-composition[data-kind=film] .channel-visual:after{background:linear-gradient(90deg,#eee8ddeb,#eee8dd55 64%),linear-gradient(0deg,#eee8ddf2 4%,transparent 65%)}
+ .interest-gallery .channel-composition[data-kind=film] .channel-title{left:7%;top:14%;bottom:auto;max-width:80%}.interest-gallery .channel-composition[data-kind=film] .channel-title h3{font-size:45px;letter-spacing:5px}.interest-gallery .channel-composition[data-kind=film] .channel-word{font-size:32vw;top:13%}
+ .interest-gallery .channel-composition[data-kind=film] .channel-note{left:7%;bottom:14%;width:83%}.interest-gallery .channel-composition[data-kind=film] .channel-note>p{font-size:11px}
+ .library-card{left:7%;top:39%;width:111px;padding:8px 10px 12px;rotate:-7deg}.library-card>span{font-size:12px;letter-spacing:2px}.library-card>small{font-size:5px}.library-card>div{font-size:6px;margin-top:7px}.library-card>em{font-size:10px;right:8px;bottom:8px}
+ .film-contact-sheet{right:6%;bottom:30%;width:50%;height:28%;gap:0;rotate:4deg}.film-contact-sheet>figure{position:absolute;width:71%;padding:4px 4px 16px}.film-contact-sheet>figure:nth-child(1){top:-25%;right:0;rotate:5deg}.film-contact-sheet>figure:nth-child(2){bottom:0;left:0;rotate:-7deg;translate:0 0}.film-contact-sheet .source-image{height:59px}.film-contact-sheet figcaption{font-size:5px;bottom:5px;left:5px;letter-spacing:.5px}
+ .interest-gallery .channel-composition[data-kind=game] .channel-visual{inset:0;width:100%;height:100%;translate:0 0;rotate:0}.interest-gallery .channel-composition[data-kind=game] .channel-visual>img{object-position:44% 36%}
+ .interest-gallery .channel-composition[data-kind=game] .channel-title{left:7%;top:16%;bottom:auto;max-width:86%}.interest-gallery .channel-composition[data-kind=game] .channel-title h3{font-size:40px}.interest-gallery .channel-composition[data-kind=game] .channel-word{font-size:27vw;top:16%}
+ .interest-gallery .channel-composition[data-kind=game] .channel-note{left:7%;bottom:12%;width:82%}.ship-log{right:8%;bottom:28%;width:83%;height:28%}.ship-log>figure{width:47%;height:75%;padding:4px 4px 18px}.ship-log figcaption{font-size:7px;bottom:5px;left:6px}.signal-orbit{width:74%;right:-7%;top:-1%;height:70%}
+ [data-kind=game] .collection-action{right:5%;top:6%;bottom:auto}.action-probe>span:last-child{display:none}
+ .gallery-invitation{font-size:7px;right:6%;top:auto;bottom:2%}
+}
+@media(max-width:360px){
+ .interest-gallery .channel-composition .channel-title h3{font-size:25px}.interest-gallery .channel-composition .channel-note>p{font-size:10px}.collection-tags{font-size:7px;gap:7px}.collection-tags>li+li:before{margin-right:7px}.collection-action{font-size:7px;gap:4px}
+ .interest-gallery .channel-composition[data-kind=webnovel] .channel-title h3{font-size:39px}.interest-gallery .channel-composition[data-kind=game] .channel-title h3{font-size:36px}.interest-gallery .channel-composition[data-kind=film] .channel-title h3{font-size:39px}
+}
+
+[data-kind=anime] .collection-action{width:29px;justify-content:center;background:#eee5cfdd;border-radius:50%}
+[data-kind=anime] .collection-action>span:last-child{display:none}
+.magi-logo{filter:brightness(.64) sepia(.5)!important;opacity:.9}
+/* Keep the source image controls clear of the chapter counter. */
+.interest-gallery{max-height:none}
+[data-kind=anime] .collection-action{top:14%}
+[data-kind=game] .collection-action{top:14%}
+@media(max-width:600px){[data-kind=anime] .collection-action,[data-kind=game] .collection-action{top:12%}}
+/* The original Magi logo already contains its subtitle. */
+[data-kind=anime] .collection-marginalia{display:none}
+.interest-gallery .channel-composition[data-kind=anime] .channel-badge,
+.interest-gallery .channel-composition[data-kind=anime] .channel-note>i{display:none}
+/* Leave the large Jian Ke title room above its short review on short desktops. */
+.interest-gallery .channel-composition[data-kind=webnovel] .channel-badge{display:none}

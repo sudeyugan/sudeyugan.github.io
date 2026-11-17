@@ -1,0 +1,93 @@
+{
+  "film": {
+    "url": "https://filmmovement.com/userFiles/uploads/films/love-letter/LOVELETTER-15.jpg",
+    "bytes": 548975,
+    "file": "film.jpg",
+    "title": "情书"
+  },
+  "game": {
+    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/753640/ss_ec95a283483f0438be40d033f08b9d956e748d54.1920x1080.jpg?t=1785424341",
+    "bytes": 406320,
+    "file": "game.jpg"
+  },
+  "novel": {
+    "file": "novel.jpg",
+    "url": "https://covers.openlibrary.org/b/isbn/9781408855652-L.jpg",
+    "title": "哈利·波特首卷封面，代表系列",
+    "bytes": 54852
+  },
+  "anime": {
+    "url": "https://www.project-magi.com/img/top/image/01.jpg",
+    "bytes": 347655,
+    "file": "anime.jpg",
+    "title": "魔笛 MAGI"
+  },
+  "lightnovel": {
+    "url": "https://cdn.kdkw.jp/cover_1000/322009/322009000012.webp",
+    "bytes": 94364,
+    "file": "lightnovel.webp",
+    "title": "我当备胎女友也没关系。"
+  },
+  "webnovel": {
+    "url": "https://bookcover.yuewen.com/qdbimg/349573/1223147/600",
+    "file": "webnovel.jpg",
+    "bytes": 185670,
+    "usage": "原作封面或官方宣传素材，用于个人收藏展示。",
+    "title": "间客 · 起点读书封面",
+    "page": "https://book.qidian.com/info/1223147/"
+  },
+  "hp-chamber.jpg": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781408855669-L.jpg",
+    "file": "hp-chamber.jpg",
+    "bytes": 71736,
+    "usage": "原作封面或官方宣传素材，用于个人收藏展示。"
+  },
+  "hp-azkaban.jpg": {
+    "url": "https://covers.openlibrary.org/b/isbn/9781408855676-L.jpg",
+    "file": "hp-azkaban.jpg",
+    "bytes": 41434,
+    "usage": "原作封面或官方宣传素材，用于个人收藏展示。"
+  },
+  "lightnovel-2.webp": {
+    "url": "https://cdn.kdkw.jp/cover_1000/322109/322109000023.webp",
+    "file": "lightnovel-2.webp",
+    "bytes": 81482,
+    "usage": "原作封面或官方宣传素材，用于个人收藏展示。"
+  },
+  "magi-visual.jpg": {
+    "url": "https://www.project-magi.com/img/common/gallery/08.jpg",
+    "file": "magi-visual.jpg",
+    "bytes": 166260,
+    "usage": "原作封面或官方宣传素材，用于个人收藏展示。"
+  },
+  "magi-logo.png": {
+    "url": "https://www.project-magi.com/img/top/logo_2nd.png",
+    "file": "magi-logo.png",
+    "bytes": 25997,
+    "usage": "原作封面或官方宣传素材，用于个人收藏展示。"
+  },
+  "film-school.jpg": {
+    "url": "https://filmmovement.com/userFiles/uploads/films/love-letter/LOVELETTER-04.jpg",
+    "file": "film-school.jpg",
+    "bytes": 322906,
+    "usage": "原作封面或官方宣传素材，用于个人收藏展示。"
+  },
+  "film-letter.jpg": {
+    "url": "https://filmmovement.com/userFiles/uploads/films/love-letter/LOVELETTER-12.jpg",
+    "file": "film-letter.jpg",
+    "bytes": 257240,
+    "usage": "原作封面或官方宣传素材，用于个人收藏展示。"
+  },
+  "game-ship.jpg": {
+    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/753640/ss_8683942f8d09eec32daeebe94867287424968f97.1920x1080.jpg?t=1785424341",
+    "file": "game-ship.jpg",
+    "bytes": 375845,
+    "usage": "原作封面或官方宣传素材，用于个人收藏展示。"
+  },
+  "game-camp.jpg": {
+    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/753640/ss_fe4a6504c49efa6e7cb9ecda7aeddb6f7451a2cc.1920x1080.jpg?t=1785424341",
+    "file": "game-camp.jpg",
+    "bytes": 395977,
+    "usage": "原作封面或官方宣传素材，用于个人收藏展示。"
+  }
+}

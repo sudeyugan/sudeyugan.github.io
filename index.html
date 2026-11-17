@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="苏的鱼干的个人主页。关于我、我做的小鱼，以及一次新的相遇。">
+  <meta name="description" content="苏的鱼干的个人主页。你好，来认识一下。">
   <meta name="theme-color" content="#f2f0e9">
   <title>苏的鱼干 · 很高兴认识你</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
@@ -12,15 +12,36 @@
   <link rel="stylesheet" href="./assets/art.css">
   <link rel="stylesheet" href="./assets/water.css">
   <link rel="stylesheet" href="./assets/current.css">
+  <link rel="stylesheet" href="./assets/home.css">
+  <link rel="stylesheet" href="./assets/about.css">
+  <link rel="stylesheet" href="./assets/collection.css">
+  <link rel="stylesheet" href="./assets/contact-match.css">
+  <link rel="stylesheet" href="./assets/match-lab.css">
   <script src="./assets/content.js" defer></script>
+  <script src="./assets/owner-answers.js" defer></script>
+  <script src="./assets/connection-data.js" defer></script>
+  <script src="./assets/connection-test.js" defer></script>
   <script src="./assets/content-runtime.js" defer></script>
   <script src="./assets/pager.js" defer></script>
   <script src="./assets/xiaoyu/placements.js" defer></script>
   <script src="./assets/video.js" defer></script>
+  <script src="./assets/xiaoyu/gaze-patches.js" defer></script>
+  <script src="./assets/desktop-gaze.js" defer></script>
   <script src="./assets/pet.js" defer></script>
   <script src="./assets/motion.js" defer></script>
   <script src="./assets/art.js" defer></script>
+  <script src="./assets/home.js" defer></script>
   <script src="./assets/water.js" defer></script>
+  <script src="./assets/music/lyrics.js" defer></script>
+  <script src="./assets/music/spectrum.js" defer></script>
+  <script src="./assets/sound.js" defer></script>
+  <script src="./assets/lyric-field.js" defer></script>
+  <script src="./assets/lyrics.js" defer></script>
+  <script src="./assets/collection-art.js" defer></script>
+  <script src="./assets/about.js" defer></script>
+  <script src="./assets/fortune-art.js" defer></script>
+  <script src="./assets/match-art.js" defer></script>
+  <script src="./assets/contact-match.js" defer></script>
   <script src="./assets/main.js" defer></script>
 </head>
 <body>
@@ -35,45 +56,33 @@
 
   <main class="scenes" id="main">
     <section class="scene scene-hello is-active" id="scene-hello" aria-labelledby="hello-title" tabindex="-1">
-      <div class="scene-kicker"><span><i class="status-dot"></i> 欢迎。这里是我的个人主页。</span><span class="mono">A HUMAN, STILL BECOMING.</span></div>
-      <div class="name-composition"><span class="type-echo" aria-hidden="true">CURIOUS BY NATURE</span>
-        <p class="name-prelude" data-copy="home.intro">你好，我是</p>
+      <div class="scene-kicker"><span><i class="status-dot"></i><span data-home-letters data-copy="home.welcome">欢迎。这里是我的个人主页。</span></span><span class="mono" data-home-letters>PERSONAL EDITION / 00</span></div>
+      <div class="name-composition">
+        <div class="name-topline"><p class="name-prelude" data-home-letters data-copy="home.intro">你好，我是</p><span class="poster-registration mono" aria-hidden="true"><i></i> S / Y</span></div>
         <h1 class="kinetic-name" id="hello-title" aria-label="苏的鱼干"><span class="name-glyph" aria-hidden="true">苏</span><span class="name-glyph" aria-hidden="true">的</span><span class="name-glyph" aria-hidden="true">鱼</span><span class="name-glyph" aria-hidden="true">干</span><span class="name-spark" aria-hidden="true">✳</span></h1>
-        <svg class="signature-line" viewBox="0 0 450 50" aria-hidden="true"><path d="M4 30c83-30 180 15 254-4s130-11 185 1"/></svg><span class="name-annotation" data-copy="home.english">soft heart. curious mind.</span>
-        <span class="name-instruction"><span>↖</span> 字也有一点自己的脾气，试着拉一下。</span>
+        <div class="name-baseline"><span class="name-annotation" data-home-letters data-copy="home.english">nice to meet you.</span><button class="signature-handle" type="button" aria-label="拨动名字下的线，拖动或按 Enter"><svg class="signature-line" viewBox="0 0 450 62" aria-hidden="true"><path d="M5 35Q225 5 445 28"/><circle cx="445" cy="28" r="3"/></svg></button><button class="name-reset" type="button"><span data-home-letters>排排好</span><i aria-hidden="true">↺</i></button></div>
+        <p class="name-instruction"><span aria-hidden="true">↖</span><span data-home-letters data-copy="home.dragHint">每个字，都可以碰一碰。</span></p>
       </div>
       <div class="hello-bottom">
-        <p class="hello-statement" data-copy="home.statement">写代码。做东西。<br>也关心那些，<em>很小的感受。</em></p>
-        <div class="hello-portals">
-          <a class="portal about-portal" href="#about" data-cursor="认识我"><span class="portal-number mono">01</span><span class="portal-title" data-copy="home.aboutCard">这个人<br>是什么样的？</span><span class="portal-arrow">↗</span><span class="portal-footnote" data-copy="home.aboutNote">从三个词开始</span></a>
-          <a class="portal pet-portal" href="#xiaoyu" data-cursor="见小鱼"><span class="portal-number mono">02 / SELECTED WORK</span><span class="portal-title" data-copy="home.workCard">我做的<br>小鱼。</span><span class="portal-arrow">↗</span><span class="pet-teaser"><canvas id="teaser-canvas" width="160" height="230" aria-hidden="true"></canvas><img class="teaser-fallback" src="./assets/xiaoyu/neutral.png" alt="一隅中的小鱼" loading="lazy"></span><span class="portal-footnote" data-copy="home.workNote">一隅 · 我的 AI 伙伴</span></a>
+        <div class="poster-greeting"><button class="hello-salute" type="button" aria-label="和苏的鱼干打个招呼"><svg viewBox="0 0 190 124" aria-hidden="true"><path class="salute-outline" d="M166 22C192 44 183 77 153 89c-25 11-51 13-77 9L48 116l4-25C10 81 1 55 17 32 36 4 132-4 166 22Z"/><path class="salute-tick" d="m8 5 8 10M34 1l2 10M184 89l-8-4"/></svg><span class="salute-text" aria-hidden="true">嗨！</span><span class="salute-dot" aria-hidden="true"></span></button><div class="greeting-note"><span class="mono" data-home-letters>OH, HELLO THERE.</span><p data-home-letters data-copy="home.invitation">不用客气，随便逛逛。</p></div></div>
+        <div class="hello-entries" aria-label="继续认识我">
+          <a class="home-entry entry-about" href="#about" aria-label="关于我"><span class="entry-meta"><span class="entry-number mono" aria-hidden="true">01 / ABOUT ME</span><svg class="entry-art entry-portrait" viewBox="0 0 72 62" aria-hidden="true"><path class="portrait-outline" d="M17 12C28 2 53 5 59 21c6 17-3 32-20 33-17 1-30-11-29-25 0-7 2-12 7-17Z"/><g class="entry-gaze"><path class="portrait-eye" d="M27 24v4m16-5v4"/><path d="M28 37q7 7 14-1"/></g><path class="portrait-hair" d="M16 14q-1-10 11-9m-1 3q1-9 10-7"/></svg></span><span class="entry-main"><span class="entry-title" data-home-letters data-copy="home.aboutEntry">关于我</span><svg class="entry-arrow" viewBox="0 0 48 40" aria-hidden="true"><path d="M5 34 40 6M19 6h21v21"/></svg></span><svg class="entry-stroke" viewBox="0 0 280 22" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M2 15C60 5 106 18 165 12S237 7 277 10"/></svg></a>
+          <a class="home-entry entry-contact" href="#contact" aria-label="认识一下"><span class="entry-meta"><span class="entry-number mono" aria-hidden="true">03 / SAY HELLO</span><svg class="entry-art entry-meeting" viewBox="0 0 72 62" aria-hidden="true"><g class="meeting-left"><path d="M7 24C8 11 29 8 34 21c5 12-2 23-12 24L12 52l1-12C8 36 6 30 7 24Z"/><circle cx="19" cy="27" r="1"/></g><g class="meeting-right"><path d="M38 15C49 4 67 14 65 28c-1 8-7 13-15 14l-6 8-3-10c-10-6-11-17-3-25Z"/><circle cx="52" cy="26" r="1"/></g><path class="meeting-bridge" pathLength="1" d="M24 29q12-7 24-1"/></svg></span><span class="entry-main"><span class="entry-title" data-home-letters data-copy="home.contactEntry">认识一下</span><svg class="entry-arrow" viewBox="0 0 48 40" aria-hidden="true"><path d="M5 34 40 6M19 6h21v21"/></svg></span><svg class="entry-stroke" viewBox="0 0 280 22" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M2 12c65 7 132-8 189-3s58 10 86 1"/></svg></a>
         </div>
       </div>
-      <div class="current-work"><span class="mono" data-copy="home.current">正在认真做的事</span><strong data-copy="home.currentTitle">一隅 Yiyu</strong><span data-copy="home.currentBody">把想法、日常与 AI 伙伴，放进同一个温暖的数字空间。</span><span class="mini-flow"><b>IDEA</b><i></i><b>CODE</b><i></i><b>COMPANION</b></span></div>
+      <div class="poster-colophon" aria-hidden="true"><span class="mono">SU DE YU GAN</span><span class="poster-dots"><i></i><i></i><i></i><i></i></span><span class="mono">SCROLL TO CONTINUE ↓</span></div>
     </section>
 
     <section class="scene scene-about" id="scene-about" aria-labelledby="about-title" tabindex="-1" hidden inert>
-      <div class="scene-kicker"><span>01 / 关于我</span><span class="mono">MORE THAN ONE WORD.</span></div>
-      <div class="about-composition">
-        <div class="word-selector" role="tablist" aria-label="从三个词认识我" aria-orientation="vertical">
-          <button class="about-word is-selected" id="word-gentle" role="tab" aria-selected="true" aria-controls="about-panel" data-word="gentle"><span class="word-index mono">01</span><span class="word-letters" data-copy="about.label0">温柔</span><span class="word-sign">↗</span></button>
-          <button class="about-word" id="word-curious" role="tab" aria-selected="false" aria-controls="about-panel" tabindex="-1" data-word="curious"><span class="word-index mono">02</span><span class="word-letters" data-copy="about.label1">有趣</span><span class="word-sign">✳</span></button>
-          <button class="about-word" id="word-maker" role="tab" aria-selected="false" aria-controls="about-panel" tabindex="-1" data-word="maker"><span class="word-index mono">03</span><span class="word-letters" data-copy="about.label2">会做</span><span class="word-sign">↗</span></button>
-        </div>
-        <div class="about-story" id="about-panel" role="tabpanel" aria-labelledby="word-gentle">
-          <div class="story-symbol" aria-hidden="true"><span class="symbol-orbit"></span><svg viewBox="0 0 180 160"><path id="story-path" d="M90 140C65 120 15 87 15 48 15 2 72-6 90 35c18-41 75-33 75 13 0 39-50 72-75 92Z"/></svg></div>
-          <p class="story-eyebrow mono">A SOFT HEART.</p><h2 id="about-title">让细节，<br>照顾一下感受。</h2>
-          <p class="story-body">有些人觉得我挺温柔的。<br>我想，这也会留在我做的东西里。<br>比如一个恰好的回应，一点不过分打扰的陪伴。</p>
-          <div class="story-note"><span class="note-line"></span><span>先从这些片段，慢慢认识我。</span></div>
-          <a class="underlined-link" href="#xiaoyu">这件事，被我做进了小鱼里 <span>↗</span></a>
-        </div>
-      </div>
-      <div class="about-details fragment-deck" aria-label="打开一些关于我的片段">
-        <button class="fragment-card" type="button" aria-expanded="false" data-fragment="0" data-cursor="翻开看看"><span class="fragment-number mono">01 / 一点温柔</span><span class="fragment-front"><i>⌁</i>回应，可以很轻。</span><span class="fragment-back" hidden>一个恰好的回应，<br>一点不过分打扰的陪伴。</span><span class="fragment-corner" aria-hidden="true">↗</span></button>
-        <button class="fragment-card" type="button" aria-expanded="false" data-fragment="1" data-cursor="翻开看看"><span class="fragment-number mono">02 / 一点好奇</span><span class="fragment-front"><i>✳</i>如果，真的做出来呢？</span><span class="fragment-back" hidden>让一个小想法，<br>长成可以亲手体验的东西。</span><span class="fragment-corner" aria-hidden="true">↗</span></button>
-        <button class="fragment-card" type="button" aria-expanded="false" data-fragment="2" data-cursor="翻开看看"><span class="fragment-number mono">03 / 一点认真</span><span class="fragment-front"><i>↗</i>从代码，到感受。</span><span class="fragment-back" hidden>把界面、AI 和本地应用连起来，<br>也把体验的最后一点做好。</span><span class="fragment-corner" aria-hidden="true">↗</span></button>
-      </div>
-      <div class="scene-aside"><span>挑一个词，换个角度认识我。</span><span class="mono">THE SAME PERSON. DIFFERENT SIDES.</span></div>
+      <div class="scene-kicker"><span>01 / 关于我</span><span class="mono">A FEW THINGS I KEEP COMING BACK TO.</span></div>
+      <div class="favorites-heading"><div class="about-identity"><h2 id="about-title">关于我</h2><p data-copy="about.intro">从我目前喜欢的东西，认识一下我。</p></div><div class="sound-widget"><button class="sound-sculpture" type="button" aria-label="开启这页的配乐" aria-pressed="false"><svg viewBox="0 0 120 84" aria-hidden="true"><rect x="6" y="34" width="12" height="24" rx="6"/><rect x="25" y="22" width="12" height="46" rx="5"/><rect x="44" y="12" width="14" height="61" rx="2"/><rect x="65" y="26" width="11" height="37" rx="5"/><rect x="83" y="19" width="13" height="51" rx="6"/><rect x="103" y="33" width="11" height="28" rx="2"/></svg></button><div class="sound-copy"><span class="mono">THIS PAGE SOUNDS LIKE</span><strong>Move Mountains <i>／ Alisa</i></strong><span class="sound-state"><span class="listening-status" role="status">进入时开启配乐</span><button class="sound-enable" type="button" hidden>开启配乐 ↗</button></span></div></div></div>
+      <div class="interest-bottom"><div class="gallery-reading"><span>目前喜欢</span><span class="gallery-current mono">01 / 07 · 音乐</span></div><div class="background-music-controls"><span class="music-times mono"><span class="music-elapsed">0:00</span><span>/</span><span class="music-duration">1:22</span></span><input class="music-seek" type="range" min="0" max="1000" value="0" aria-label="配乐播放进度" aria-valuetext="0:00 / 1:22"><button class="music-loop" type="button" aria-pressed="true" aria-label="单曲循环">↻</button><label class="music-volume">音量<input type="range" min="0" max="1" step="0.01" value="0.28" aria-label="配乐音量"></label></div></div>
+      <div class="interest-stage interest-gallery" id="interest-panel" role="region" aria-label="我目前喜欢的作品与音乐，向下浏览" tabindex="0"><div class="collection-scene"></div><article class="channel-music" aria-label="音乐频道，Move Mountains 歌词演出"><header><span class="mono">01 / A SONG, IN SHAPE</span><span>Move Mountains · Alisa</span></header>
+<div class="lyric-stage" role="region" aria-label="当前歌词"><span class="lyric-registration" aria-hidden="true">＋</span><span class="lyric-edition mono" aria-hidden="true">MOVE MOUNTAINS.</span><div class="lyric-canvas" aria-hidden="true"></div><p class="lyric-readable home-sr-only"></p><span class="lyric-cue-count mono" aria-hidden="true">00 / 17</span><span class="lyric-stage-note" aria-hidden="true">听见一句，看见一句。</span></div>
+        <div class="lyric-navigation"><button class="lyric-prev" type="button" aria-label="上一句歌词">← <span>上一句</span></button><button class="lyric-next" type="button" aria-label="下一句歌词"><span>下一句</span> →</button></div></article><span class="gallery-invitation" aria-hidden="true">继续往下看 ↓</span></div>
+      <div class="favorites-bottom"><span>一些喜欢的东西，和几句自己的话。</span><a class="favorites-chat" href="#contact">你也喜欢？来交换一下 <span aria-hidden="true">↗</span></a></div>
+      <audio id="favorite-audio" preload="metadata" loop src="./assets/music/move-mountains.mp3"></audio>
+      <dialog class="favorite-dialog" aria-labelledby="favorite-dialog-title"><button class="favorite-dialog-close" type="button" aria-label="关闭收藏详情">×</button><div class="favorite-dialog-art" aria-hidden="true"></div><div class="favorite-dialog-copy"><span class="favorite-dialog-kind mono"></span><h3 id="favorite-dialog-title"></h3><p></p><span class="favorite-dialog-badge"></span></div></dialog>
     </section>
 
     <section class="scene scene-xiaoyu" id="scene-xiaoyu" aria-labelledby="xiaoyu-title" tabindex="-1" hidden inert>
@@ -83,7 +92,7 @@
         <div class="pet-space" id="pet-space" aria-label="小鱼的互动区域">
           <div class="pet-backtype" aria-hidden="true">小<br>鱼</div><div class="pet-floor" aria-hidden="true"></div><div class="pet-signal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
           <div class="pet-speech" id="pet-speech" role="status">你好呀，我是小鱼。<span>把手伸过来，认识一下？</span></div>
-          <button class="pet-actor" data-renderer="webm" id="pet-actor" type="button" aria-label="点击头部理头发，点击身体害羞，长按伸懒腰，拖动移动；键盘 Enter 触碰，方向键移动" data-cursor="靠近一点"><span class="pet-video-stage"><video class="pet-video" id="pet-video" muted playsinline preload="metadata" aria-hidden="true"></video></span><canvas id="pet-canvas" width="600" height="800" aria-hidden="true"></canvas><img class="pet-static" src="./assets/xiaoyu/neutral.png" alt="银白长发、蓝眼睛的小鱼"><span class="pet-ground-shadow" aria-hidden="true"></span></button>
+          <button class="pet-actor" data-renderer="webm" id="pet-actor" type="button" aria-label="点击头部理头发，点击身体害羞，长按伸懒腰，拖动移动；键盘 Enter 触碰，方向键移动"><span class="pet-video-stage"><video class="pet-video" id="pet-video" muted playsinline preload="metadata" aria-hidden="true"></video></span><canvas id="pet-canvas" width="600" height="800" aria-hidden="true"></canvas><img class="pet-static" src="./assets/xiaoyu/neutral.png" alt="银白长发、蓝眼睛的小鱼"><span class="pet-ground-shadow" aria-hidden="true"></span></button>
           <div class="pet-particles" aria-hidden="true"></div><span class="pet-coordinate mono" aria-hidden="true">X <b id="pet-x">0</b> · Y <b id="pet-y">0</b></span>
           <span class="drag-instruction" data-copy="pet.dragHint">拖到你喜欢的位置。或者，点点她。</span><button class="reset-pet" type="button" aria-label="让小鱼回到原位">↺</button>
         </div>
@@ -94,7 +103,12 @@
 
     <section class="scene scene-contact" id="scene-contact" aria-labelledby="contact-title" tabindex="-1" hidden inert>
       <div class="scene-kicker"><span>03 / 认识一下</span><span><i class="status-dot"></i> 很高兴，你愿意停留一下。</span></div>
-      <div class="contact-composition"><div class="contact-heading"><span class="mono">STRANGERS, UNTIL WE SAY HELLO.</span><h2 id="contact-title"><span class="hello-word">hello,</span><span class="friend-word">friend<span>✳</span></span></h2><p>我们可以从一句<span>「你好」</span>开始。</p><div class="hello-postcard"><button type="button" class="postcard-stamp" aria-label="盖一枚问候邮戳" data-cursor="盖个章">HI<span>TO YOU</span></button><span class="postcard-postmark" aria-hidden="true">HELLO, FRIEND.<br><small>很高兴遇见你</small></span><p data-copy="contact.postcard">从网页上的一次停留，<br>到生活里的一次新相遇。</p><span class="postcard-address">TO / <b data-name>苏的鱼干</b><svg viewBox="0 0 150 36" aria-hidden="true"><path d="M2 25c30-40 55 30 85-3s50 4 60-8m-11-6 12 5-9 9"/></svg></span><button type="button" class="postcard-flip" aria-expanded="false" aria-controls="postcard-reverse" data-cursor="翻过来">翻到背面 ↗</button><div class="postcard-reverse" id="postcard-reverse" hidden><span class="mono">A NOTE TO YOU</span><p>不必准备一个完美的开场。<br>一句你好，一点好奇，<br>或者分享刚刚想到的小事。</p><span>很高兴认识你。<i>⌁</i></span></div></div><span class="postcard-hint">这张明信片，可以翻面，也可以拖一拖。</span></div><div class="contact-right"><div class="opener-picker"><span class="mono">START ANYWHERE</span><div class="opener-tabs" role="tablist" aria-label="选择聊天开场"><button role="tab" id="opener-0" aria-selected="true" aria-controls="opener-panel" type="button">聊技术</button><button role="tab" id="opener-1" aria-selected="false" aria-controls="opener-panel" tabindex="-1" type="button">聊想法</button><button role="tab" id="opener-2" aria-selected="false" aria-controls="opener-panel" tabindex="-1" type="button">随便聊</button></div><div class="opener-panel" id="opener-panel" role="tabpanel" aria-labelledby="opener-0"><span class="opener-quote">“</span><p>你是怎么把小鱼做出来的？<br>我也想做点有意思的东西。</p><button class="copy-opener" type="button"><span>复制这个开场</span><span>↗</span></button></div></div><div class="contact-links"><span class="contact-label">找到苏的鱼干</span><div data-contact="wechat"><span>微信</span><span class="contact-pending">稍后补上</span></div><div data-contact="email"><span>邮箱</span><span class="contact-pending">稍后补上</span></div><div data-contact="github"><span>GitHub</span><span class="contact-pending">稍后补上</span></div></div><span class="contact-footnote" role="status" data-copy="contact.pending">联系方式还在整理。先记住「苏的鱼干」吧。</span><button class="contact-current" type="button" aria-label="轻轻推一下纸船" data-cursor="推推纸船"><svg aria-hidden="true" viewBox="0 0 440 100"><path class="current-line" d="M0 70Q55 48 110 70T220 70T330 70T440 70"/><path class="current-line" d="M0 82Q55 60 110 82T220 82T330 82T440 82"/><g class="paper-boat"><path d="m0 0 25 13L50 0 38 22H12Z"/><path d="m12 0 13-24L38 0M25-24V13M12 0H38"/></g></svg><span class="mono">LET A LITTLE CURIOSITY DRIFT.</span><span class="boat-invitation">游近一点，或轻轻推一下。</span></button></div></div>
+      <div class="meet-experience">
+        <div class="match-heading"><div><span class="mono">A LITTLE FATE. A LITTLE RESONANCE.</span><h2 id="contact-title">认识一下<span>。</span></h2></div><div class="meet-mode-tabs" role="tablist" aria-label="选一种方式认识一下"><button type="button" id="meet-tab-match" data-meet-mode="match" role="tab" aria-selected="true" aria-controls="meet-panel"><span class="tab-no">01</span>看看合拍度</button><button type="button" id="meet-tab-fortune" data-meet-mode="fortune" role="tab" aria-selected="false" aria-controls="meet-panel" tabindex="-1"><span class="tab-no">02</span>抽一支签</button></div></div>
+        <div class="match-stage" id="meet-panel" role="tabpanel" aria-labelledby="meet-tab-match" data-experience="match" data-phase="welcome"><canvas class="match-art" aria-hidden="true"></canvas><div class="match-content"></div></div>
+        <div class="meet-footer"><div class="meet-invitation"><span class="contact-label">找到苏的鱼干</span><span>一句你好，就可以。</span></div><div class="meet-addresses"><button class="meet-qq" type="button" aria-label="复制 QQ 号码"><span class="meet-platform">QQ</span><strong>1357241906</strong><span class="meet-link-action">复制 ↗</span></button><a class="meet-steam" href="https://steamcommunity.com/profiles/76561198404599979/" target="_blank" rel="noopener noreferrer"><span class="meet-platform">Steam</span><strong>个人主页</strong><span class="meet-link-action">去看看 ↗</span></a></div></div>
+        <p class="meet-status" role="status" aria-live="polite"></p>
+      </div>
     </section>
   </main>
 
@@ -102,7 +116,7 @@
 </div><div class="scroll-stops" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
   <nav class="site-index" id="site-index" aria-label="全部内容" hidden inert><span class="index-caption mono">NO PARTICULAR ORDER. FOLLOW YOUR CURIOSITY.</span><a href="#hello"><span class="mono">00</span><span>你好。</span><span>↗</span></a><a href="#about"><span class="mono">01</span><span>关于我。</span><span>↗</span></a><a href="#xiaoyu"><span class="mono">02</span><span>见见小鱼。</span><span>↗</span></a><a href="#contact"><span class="mono">03</span><span>认识一下。</span><span>↗</span></a></nav>
 
-  <div class="pointer-follower" aria-hidden="true"><svg class="cursor-shape" viewBox="-3 -13 39 26"><g class="cursor-fish"><path class="fish-tail" d="M23 0c4-2 6-6 11-7-1 4-3 6-5 7 3 1 5 4 6 7-5-1-8-5-12-7Z"/><path class="fish-body" d="M0 0C6-7.5 16-8 25 0 17 8 6 7.5 0 0Z"/><path class="fish-fin" d="M13 4c2 4 5 5 7 4l-3-5"/><path class="fish-shine" d="M6-2.6c4-2.8 8-2.9 12-.6"/><path class="fish-gill" d="M11-3q-2 3 0 6"/><circle class="fish-eye" cx="6.8" cy="-.8" r="1.15"/></g></svg><i class="cursor-halo"></i><span></span></div>
+  <div class="pointer-follower" aria-hidden="true"><svg class="cursor-shape" viewBox="-3 -13 39 26"><g class="cursor-fish"><path class="fish-tail" d="M23 0c4-2 6-6 11-7-1 4-3 6-5 7 3 1 5 4 6 7-5-1-8-5-12-7Z"/><path class="fish-body" d="M0 0C6-7.5 16-8 25 0 17 8 6 7.5 0 0Z"/><path class="fish-fin" d="M13 4c2 4 5 5 7 4l-3-5"/><path class="fish-shine" d="M6-2.6c4-2.8 8-2.9 12-.6"/><path class="fish-gill" d="M11-3q-2 3 0 6"/><circle class="fish-eye" cx="6.8" cy="-.8" r="1.15"/></g></svg><i class="cursor-halo"></i></div>
   <div class="transition-art" aria-hidden="true"><svg viewBox="0 0 180 1000" preserveAspectRatio="none"><path d="M90-100C-60 130 240 250 90 480S-30 790 90 1100"/><path d="M112-100C-38 130 262 250 112 480S-8 790 112 1100"/></svg><span class="transition-word"></span><i></i></div><div class="art-bursts" aria-hidden="true"></div><div class="toast" role="status" hidden></div>
   <noscript><style>.scene[hidden]{display:block!important;position:relative;min-height:100vh}.scene{position:relative!important;height:auto!important;min-height:100vh}.scenes{height:auto!important;overflow:visible!important}body{height:auto!important;overflow:auto!important}.site-footer{position:relative!important}.pet-static,.teaser-fallback{display:block!important}.pet-actor canvas,.pet-teaser canvas{display:none!important}</style><p>启用 JavaScript 后，可以切换场景、拖动文字并和小鱼互动。</p></noscript>
 </body>

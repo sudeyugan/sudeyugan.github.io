@@ -29,7 +29,8 @@
     return renderer.expression;
   }
   class PetRenderer{
-    constructor(canvas,isReduced){this.canvas=canvas;this.ctx=canvas.getContext('2d');this.isReduced=isReduced;this.pose='neutral';this.format='desktop';this.gaze={x:0,y:0};this.active=true;this.ready=false;this.nextBlink=performance.now()+2800;this.blinkUntil=0;this.last=0;this.frame=this.frame.bind(this);image('neutral');image('mobile');image('sleep');if(this.ctx)requestAnimationFrame(this.frame);}
+    constructor(canvas,isReduced){this.canvas=canvas;this.ctx=canvas.getContext('2d');this.isReduced=isReduced;this.pose='neutral';this.format='desktop';this.gaze={x:0,y:0};this.tracking=new DesktopPetTracking(canvas);this.suspended=false;this.active=false;this.ready=false;this.nextBlink=performance.now()+2800;this.blinkUntil=0;this.last=0;this.frame=this.frame.bind(this);image('neutral');image('mobile');image('sleep');if(this.ctx)requestAnimationFrame(this.frame);}
+    setActive(active){this.active=active;if(!active){this.tracking.clear(true);this.suspended=false;}}
     frame(now){
       requestAnimationFrame(this.frame);
       if(document.hidden||!this.active||now-this.last<33)return;this.last=now;
@@ -52,18 +53,18 @@
         ctx.imageSmoothingEnabled=true;
         ctx.drawImage(source,sx,sy,sw,sh,(w-dw)/2,h*.98-dh+breath,dw,dh);
       }else{
-        const drawing=!reduced&&this.pose!=='sleep'&&now<this.blinkUntil?withBlink(this,source):source;
         const scale=Math.min(w*.96/source.naturalWidth,h*.96/source.naturalHeight);
         const dw=source.naturalWidth*scale,dh=source.naturalHeight*scale;
         const left=(w-dw)/2,top=h*.98-dh;
+        this.gaze=this.tracking.update(now,{left,top,scale,width:w,height:h},this.pose,this.suspended,reduced);
+        const drawing=!reduced&&this.pose!=='sleep'&&now<this.blinkUntil?withBlink(this,source):this.tracking.paint(source,this.pose);
         const phase=reduced?0:now*.0015;
         ctx.imageSmoothingEnabled=false;
         // Connected strips keep the original silhouette; no detached head or limbs.
         for(let row=0;row<source.naturalHeight;row+=6){
           const sy=row/source.naturalHeight;
-          const head=Math.exp(-Math.pow((sy-.32)/.27,2));
           const hair=Math.sin(Math.PI*sy)*Math.sin(phase+sy*3)*1.7;
-          const offset=reduced?0:head*this.gaze.x*6+hair;
+          const offset=reduced?0:hair;
           const breath=reduced?0:Math.sin(phase*1.2)*1.1*(1-sy);
           const height=Math.min(6,source.naturalHeight-row);
           ctx.drawImage(drawing,0,row,source.naturalWidth,height,left+offset,top+row*scale+breath,dw,height*scale+.4);
@@ -78,15 +79,21 @@
       this.mode='webm';this.view='hello';this.actor.dataset.renderer='webm';
       this.actor.querySelector('.pet-static').src='./assets/xiaoyu/webm/poster.png';
       this.videoPlayer=new VideoCompanion(document.querySelector('#pet-video'),isReduced,()=>this.actor.querySelector('.pet-static').hidden=true,()=>{this.onState('WebM 暂时无法播放，可以切换桌面小鱼。');});
-      this.teaser=new PetRenderer(document.querySelector('#teaser-canvas'),isReduced);this.teaser.format='mobile';
       this.position={x:0,y:0,tx:0,ty:0,vx:0,vy:0};this.drag=null;this.reaction=0;this.poseTimer=0;this.state='neutral';
-      this.library=document.querySelector('#action-library');document.body.appendChild(this.library);this.libraryToggle=document.querySelector('.action-library-toggle');this.bindDrag();this.bindActions();this.last=0;this.loop=this.loop.bind(this);requestAnimationFrame(this.loop);
+      this.library=document.querySelector('#action-library');document.body.appendChild(this.library);this.libraryToggle=document.querySelector('.action-library-toggle');this.bindTracking();this.bindDrag();this.bindActions();this.last=0;this.loop=this.loop.bind(this);requestAnimationFrame(this.loop);
       window.addEventListener('resize',()=>{this.reset();if(!this.library.hidden)this.placeLibrary();});
       window.addEventListener('scroll',()=>{if(!this.library.hidden)this.setLibrary(false);},{passive:true});
       this.speech=document.querySelector('#pet-speech');
       const initial=()=>{if(this.state==='neutral'){this.say(window.HOME_CONTENT.copy['pet.initialSpeech'],window.HOME_CONTENT.copy['pet.initialDetail']);this.onState(window.HOME_CONTENT.copy['pet.initialState']);}};initial();window.addEventListener('site:content',initial);
     }
-    visible(view){if(view!=='xiaoyu'){this.setLibrary(false);clearTimeout(this.holdTimer);this.drag=null;this.waveGesture=null;}this.view=view;this.renderer.active=view==='xiaoyu'&&this.mode==='desktop';this.teaser.active=view==='hello';this.videoPlayer.setActive(view==='xiaoyu'&&this.mode==='webm');}
+    visible(view){if(view!=='xiaoyu'){this.setLibrary(false);clearTimeout(this.holdTimer);this.drag=null;this.waveGesture=null;}this.view=view;this.renderer.setActive(view==='xiaoyu'&&this.mode==='desktop');this.videoPlayer.setActive(view==='xiaoyu'&&this.mode==='webm');}
+    bindTracking(){
+      document.addEventListener('pointermove',e=>{if(this.renderer.active)this.renderer.tracking.capture(e);},{passive:true});
+      document.addEventListener('pointerout',e=>{if(!e.relatedTarget)this.renderer.tracking.clear();});
+      window.addEventListener('blur',()=>this.renderer.tracking.clear());
+      document.addEventListener('visibilitychange',()=>{if(document.hidden)this.renderer.tracking.clear(true);});
+      window.addEventListener('site:motion',()=>this.renderer.tracking.clear(true));
+    }
     bounds(){
       const width=this.space.clientWidth,height=this.space.clientHeight,actor=this.actor;
       return {minX:-actor.offsetLeft+15-actor.clientWidth*.2,maxX:width-actor.offsetLeft-actor.clientWidth*.8-15,minY:45-actor.offsetTop,maxY:height-actor.offsetTop-actor.clientHeight+15};
@@ -94,7 +101,7 @@
     bindDrag(){
       this.actor.addEventListener('pointerdown',e=>{
         if(e.button!==0)return;
-        e.preventDefault();this.actor.setPointerCapture(e.pointerId);
+        e.preventDefault();this.actor.setPointerCapture(e.pointerId);this.renderer.suspended=true;
         const r=this.actor.getBoundingClientRect();
         this.drag={id:e.pointerId,startX:e.clientX,startY:e.clientY,region:(e.clientY-r.top)/r.height<.34?'head':'body',x:this.position.tx,y:this.position.ty,lastX:e.clientX,lastY:e.clientY,last:performance.now(),moved:false};this.position.vx=this.position.vy=0;
         clearTimeout(this.holdTimer);this.actor.classList.add('is-holding');
@@ -104,7 +111,6 @@
         },720);
       });
       this.actor.addEventListener('pointermove',e=>{
-        const r=this.actor.getBoundingClientRect();this.renderer.gaze={x:clamp((e.clientX-r.left)/r.width-.5,-.5,.5),y:0};
         if(!this.drag)return;
         const d=this.drag,b=this.bounds(),dx=e.clientX-d.startX,dy=e.clientY-d.startY;
         if(Math.hypot(dx,dy)>7){d.moved=true;clearTimeout(this.holdTimer);this.actor.classList.remove('is-holding');}
@@ -116,7 +122,7 @@
       });
       const release=e=>{
         if(!this.drag)return;
-        const {moved,held,region}=this.drag;this.drag=null;clearTimeout(this.holdTimer);this.actor.classList.remove('is-holding');
+        const {moved,held,region}=this.drag;this.drag=null;this.renderer.suspended=false;clearTimeout(this.holdTimer);this.actor.classList.remove('is-holding');
         if(e.type!=='pointerup')return;
         if(!moved&&!held)this.trigger(region==='head'?'pat':'shy',region);
         if(moved){this.trigger('celebrate','drag');this.say('搬好啦。这个新位置，我喜欢。','为一点小小的变化，庆祝一下。');}
@@ -129,7 +135,6 @@
         }
       });
       this.space.addEventListener('pointermove',e=>{
-        const r=this.space.getBoundingClientRect();this.renderer.gaze.x=clamp((e.clientX-r.left)/r.width-.5,-.5,.5);
         if(this.drag||e.pointerType==='touch'||this.view!=='xiaoyu'||this.state!=='neutral'||document.documentElement.dataset.demo==='listening'||document.documentElement.dataset.demo==='speaking')return;
         const now=performance.now();
         if(now-(this.lastGesture||0)<2400)return;
@@ -175,6 +180,7 @@
         document.querySelectorAll('[data-format]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
         this.actor.querySelector('.pet-static').src=this.mode==='webm'?'./assets/xiaoyu/webm/poster.png':'./assets/xiaoyu/neutral.png';
         this.actor.querySelector('.pet-static').hidden=this.mode==='desktop'?this.renderer.ready:!!this.videoPlayer.current;
+        document.querySelector('.pet-format-note').textContent=this.mode==='desktop'?'移动鼠标，她会望向你指的位置。':'原项目的真实角色素材 · 网页独立演示';
         if(this.mode==='webm')this.videoPlayer.desired='idle';this.visible(this.view);this.say(this.mode==='webm'?'换一种形象，也还是小鱼。':'小小的我，也认真陪着你。','WebM 形象与桌面小鱼，来自同一个一隅。');
         document.querySelectorAll('[data-action]').forEach(b=>b.classList.remove('is-current'));
       }));
@@ -216,7 +222,7 @@
         else heart.animate([{opacity:0,transform:'translate(0,0) scale(.4)'},{opacity:1,offset:.15},{opacity:0,transform:`translate(${(Math.random()-.5)*130}px,${-100-Math.random()*80}px) rotate(${Math.random()*80-40}deg) scale(1.1)`}],{duration:1300+i*65,delay:i*55,easing:'cubic-bezier(.15,.5,.3,1)'}).finished.then(()=>heart.remove());
       }
     }
-    reset(){this.position.tx=this.position.ty=this.position.vx=this.position.vy=0;}
+    reset(){this.renderer.tracking.clear(true);this.position.tx=this.position.ty=this.position.vx=this.position.vy=0;}
     loop(now){
       requestAnimationFrame(this.loop);if(document.hidden||this.view!=='xiaoyu'||now-this.last<16)return;this.last=now;
       const p=this.position,reduced=this.isReduced();

@@ -1,10 +1,10 @@
 /* Ink, paper and a small wake confined to the fish cursor. */
 #water-surface{position:fixed;left:0;top:0;width:160px;height:160px;z-index:80;pointer-events:none;opacity:.95}
 .scroll-story{z-index:1}.experience-shell{background:transparent}
-.pointer-follower,.pointer-follower.has-label{margin:-13px 0 0 -3px}
+.pointer-follower{margin:-13px 0 0 -3px}
 .cursor-shape{filter:drop-shadow(0 2px 2px #4d73551c)}
 .fish-body{fill:#455f50}.fish-tail{fill:#455f50}
-.cursor-fish:after{content:''}.pointer-follower>span{background:#fafbf0c9;backdrop-filter:blur(8px);border-color:#a6b5a044;box-shadow:none}
+.cursor-fish:after{content:''}
 .cursor-halo{left:-9px;top:1px}.pointer-follower.is-interactive .cursor-halo{opacity:.35;scale:1.1}
 .about-composition{height:calc(100% - 210px)}
 .about-details.fragment-deck{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;border:0;padding:0;margin-top:auto;margin-bottom:18px;perspective:1000px}

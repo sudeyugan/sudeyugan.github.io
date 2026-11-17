@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560">
+  <defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0v32" fill="none" stroke="#9aab9e" stroke-opacity=".08"/></pattern><linearGradient id="shade" x2="1" y2="1"><stop stop-color="#2b3c39"/><stop offset="1" stop-color="#132724"/></linearGradient></defs>
+  <path fill="url(#shade)" d="M0 0h400v560H0z"/><path fill="url(#grid)" d="M0 0h400v560H0z"/>
+  <g fill="none" stroke="#c7b080" stroke-width=".8"><circle cx="278" cy="202" r="120" stroke-opacity=".35"/><circle cx="278" cy="202" r="102" stroke-dasharray="2 9" stroke-opacity=".5"/><path d="M30 63h340M30 491h340M277 63v428" stroke-opacity=".24"/><path d="m60 440 270-295m-140 250 140-155" stroke-opacity=".5"/></g>
+  <circle cx="278" cy="82" r="3" fill="#dfbc82"/><path d="M20 0h8v560h-8" fill="#879a86" opacity=".16"/>
+  <g fill="#e9dfbc" font-family="serif"><text x="55" y="248" font-size="111" letter-spacing="12">间</text><text x="169" y="385" font-size="111">客</text></g>
+  <g fill="#adba9f" font-family="monospace" font-size="10" letter-spacing="4"><text x="43" y="43">JIAN KE</text><text x="43" y="521">MAO NI / 猫腻</text></g>
+  <text x="45" y="468" fill="#bca97f" font-family="serif" font-size="12" letter-spacing="3">世界很大，道理很小。</text>
+</svg>

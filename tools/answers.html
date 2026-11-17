@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>我的答案 · 苏的鱼干</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="stylesheet" href="./answers.css">
+  <script src="../assets/owner-answers.js" defer></script>
+  <script src="../assets/connection-data.js" defer></script>
+  <script src="./answers.js" defer></script>
+</head>
+<body>
+  <header class="editor-header"><a href="../index.html#contact">苏的鱼干 <span>↗ 回主页</span></a><span class="header-label">FOR MYSELF / 偏好设置</span></header>
+  <main>
+    <section class="intro"><div><span class="eyebrow">THE OTHER HALF OF THE CONVERSATION</span><h1>先填好，我的这一半。</h1><p>这些选择用于合拍度计算，结果页不会展示你的答案。<br>随时回来修改，不用改代码。</p></div><div class="completion"><span id="count">0</span><span class="count-total">/ —</span><small>已填写</small></div></section>
+    <section class="save-panel" aria-label="保存答案"><div><strong id="save-state">正在读取答案…</strong><p id="save-explanation">选择后会在此浏览器自动保存草稿。保存到答案文件后，刷新主页即可生效。</p></div><div class="save-actions"><button type="button" id="save-file" class="primary">保存到答案文件 ↗</button><button type="button" id="download-file">下载答案文件 ↓</button><label class="import-label">导入已有答案<input type="file" id="import-file" accept=".js,.json"></label></div></section>
+    <div class="file-help"><span>答案文件：<code>assets/owner-answers.js</code>。下载后用同名文件替换它，再提交到 GitHub。</span><button id="restore-draft" type="button" hidden>恢复本地草稿</button><button id="restore-file" type="button">恢复为文件中的答案</button></div>
+    <p id="editor-status" role="status" aria-live="polite"></p>
+    <div class="editor-layout"><aside class="editor-sidebar"><nav aria-label="按主题查看" id="categories"></nav><div class="editor-tip"><span>01 / 选自己的答案</span><span>02 / 保存到文件</span><span>03 / 刷新主页，查看真实合拍度</span><p>暂不想填的题可以留空，主页会保留预览提示。即使某个大类不喜欢，也可以预先填写它的细分题。</p></div></aside><section class="question-list" id="questions" aria-label="本人偏好问题"></section></div>
+    <footer class="editor-footer"><span>只维护自己的偏好，不记录来访者回答。</span><span id="draft-time"></span></footer>
+  </main>
+  <div class="editor-dock"><div><span id="dock-count">0 / — 已选</span><progress id="dock-progress" max="1" value="0" aria-label="本人偏好填写进度"></progress></div><button type="button" id="back-top">回到顶部 ↑</button><button type="button" id="dock-save" class="primary">保存答案 ↗</button></div>
+  <dialog id="confirm-dialog"><form method="dialog"><h2 id="confirm-title">恢复文件中的答案？</h2><p id="confirm-copy">当前草稿将被文件中保存的版本替换。</p><div><button value="cancel">取消</button><button value="confirm" class="primary">确认恢复</button></div></form></dialog>
+</body>
+</html>

@@ -23,13 +23,10 @@
     }
     const lead=document.querySelector('.pet-description h2');
     lead.firstChild.textContent=content.copy['pet.titleLead']||'她叫';lead.querySelector('span').textContent=content.copy['pet.name']||'小鱼';
-    const welcome=document.querySelector('.scene-hello .scene-kicker>span:first-child');welcome.lastChild.textContent=' '+content.copy['home.welcome'];
-    const hint=document.querySelector('.name-instruction');hint.lastChild.textContent=' '+content.copy['home.dragHint'];
-    document.querySelector('.contact-heading>p').textContent=content.copy['contact.greeting'];
-    document.querySelector('.hello-word').textContent=content.copy['contact.hello'];
-    const friend=document.querySelector('.friend-word');friend.firstChild.textContent=content.copy['contact.friend'];
+    const greeting=document.querySelector('.contact-heading>p');if(greeting)greeting.textContent=content.copy['contact.greeting'];
+    const hello=document.querySelector('.hello-word');if(hello)hello.textContent=content.copy['contact.hello'];
+    const friend=document.querySelector('.friend-word');if(friend)friend.firstChild.textContent=content.copy['contact.friend'];
     document.querySelector('.technical-sheet>p').textContent=content.copy['technical.body'];
-    document.querySelector('.scene-aside>span:first-child').textContent=content.copy['about.hint'];
     const contactNote=document.querySelector('.scene-contact .scene-kicker>span:last-child');contactNote.lastChild.textContent=' '+content.copy['contact.note'];
     document.querySelectorAll('.site-index>a').forEach(link=>link.children[1].textContent=(content.copy['nav.'+link.hash.slice(1)]||'')+'。');
     document.querySelectorAll('.opener-tabs button').forEach((el,i)=>el.textContent=content.openers[i]?.label||'');

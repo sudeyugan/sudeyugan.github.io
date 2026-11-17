@@ -61,8 +61,9 @@
       if(this.source){
         const dx=source.x-this.source.x,dy=source.y-this.source.y,distance=Math.hypot(dx,dy),elapsed=Math.max(12,now-this.source.time);
         if(distance>200){this.reset();this.place(point);}
-        else if(distance>=3.2){
-          const steps=Math.min(8,Math.ceil(distance/4)),heading=Math.atan2(dy,dx),strength=clamp(.17+distance/elapsed*.12,.17,.34);
+        // Space input in both distance and time; keep the simulation itself smooth.
+        else if(distance>=4.8&&elapsed>=28){
+          const steps=Math.min(8,Math.ceil(distance/6)),heading=Math.atan2(dy,dx),strength=clamp(.17+distance/elapsed*.12,.17,.34);
           for(let i=1;i<=steps;i++)this.add(this.source.x+dx*i/steps,this.source.y+dy*i/steps,heading,strength);
           this.active=true;this.lastInput=now;this.source=source;
         }
@@ -201,9 +202,7 @@
       const nearBoat=boatRect&&Math.hypot(this.point.x-(boatRect.left+boatRect.width/2),this.point.y-(boatRect.top+boatRect.height/2))<88&&document.documentElement.dataset.view==='contact';
       this.boatNear=!!nearBoat;
       this.follower.dataset.affinity=nearBoat?'boat':record?.kind||'free';
-      if(record&&!target.closest('[data-cursor]')){
-        this.follower.classList.add('has-label');this.follower.querySelector('span').textContent=record.kind==='card'?'轻轻碰一下':'拨动一下';
-      }
+
     }
     releaseContact(){
       if(this.hover){this.hover.near=false;this.hover.contact=0;this.hover.settled=false;this.hover.element.classList.remove('is-current-near');}

@@ -10,23 +10,12 @@ window.HOME_CONTENT = {
     "header.note": "一点温柔。很多好奇心。",
     "home.welcome": "欢迎。这里是我的个人主页。",
     "home.intro": "你好，我是",
-    "home.english": "soft heart. curious mind.",
-    "home.dragHint": "字也有一点自己的脾气，试着拉一下。",
-    "home.statement": "写代码。做东西。\n也关心那些，很小的感受。",
-    "home.aboutCard": "这个人\n是什么样的？",
-    "home.aboutNote": "从三个词开始",
-    "home.workCard": "我做的\n小鱼。",
-    "home.workNote": "一隅 · 我的 AI 伙伴",
-    "home.current": "正在认真做的事",
-    "home.currentTitle": "一隅 Yiyu",
-    "home.currentBody": "把想法、日常与 AI 伙伴，放进同一个温暖的数字空间。",
-    "about.hint": "挑一个词，换个角度认识我。",
-    "about.label0": "温柔",
-    "about.label1": "有趣",
-    "about.label2": "会做",
-    "about.detail0": "让反馈自然发生",
-    "about.detail1": "把选择留给使用者",
-    "about.detail2": "陪伴可以很轻盈",
+    "home.english": "nice to meet you.",
+    "home.dragHint": "每个字，都可以碰一碰。",
+    "home.aboutEntry": "关于我",
+    "home.contactEntry": "认识一下",
+    "home.invitation": "不用客气，随便逛逛。",
+    "about.intro": "从我目前喜欢的东西，认识一下我。",
     "pet.titleLead": "她叫",
     "pet.name": "小鱼",
     "pet.tagline": "让陪伴，\n从屏幕里多走出来一点。",
@@ -54,36 +43,67 @@ window.HOME_CONTENT = {
     "pet.libraryTitle": "换一个心情，认识小鱼。",
     "pet.libraryHint": "选一个动作，看看她的回应。"
   },
-  "stories": {
-    "gentle": {
-      "eyebrow": "A SOFT HEART.",
-      "title": "让细节，\n照顾一下感受。",
-      "body": "有些人觉得我挺温柔的。\n我想，这也会留在我做的东西里。\n比如一个恰好的回应，一点不过分打扰的陪伴。",
-      "note": "先从这些片段，慢慢认识我。",
-      "link": "这件事，被我做进了小鱼里",
-      "path": "M90 140C65 120 15 87 15 48 15 2 72-6 90 35c18-41 75-33 75 13 0 39-50 72-75 92Z"
+  "favorites": [
+    {
+        "kind": "novel",
+        "image": "./assets/collection/novel.jpg",
+        "label": "小说",
+        "title": "哈利·波特",
+        "caption": "HARRY POTTER",
+        "note": "直到现在，还是会想收到一封霍格沃茨的来信。",
+        "placeholder": false
     },
-    "curious": {
-      "eyebrow": "A CURIOUS MIND.",
-      "title": "有意思的想法，\n值得试试看。",
-      "body": "不一定要很宏大，才值得开始。\n一个会回应的小伙伴，一个用起来舒服的界面，\n都能让我想：如果真的把它做出来呢？",
-      "note": "好奇心在线。答案可以晚一点来。",
-      "link": "比如，看看这个有点特别的小伙伴",
-      "path": "M90 12v136M22 80h136M42 32l96 96M42 128l96-96M55 17l70 126M23 47l134 66M23 113l134-66M55 143l70-126"
+    {
+        "kind": "lightnovel",
+        "image": "./assets/collection/lightnovel.webp",
+        "label": "轻小说",
+        "title": "备胎女友",
+        "fullTitle": "我当备胎女友也没关系。",
+        "caption": "SECOND GIRLFRIEND",
+        "note": "关系越拧巴，越想知道后面会怎样。",
+        "placeholder": false
     },
-    "maker": {
-      "eyebrow": "IDEAS, MEET REALITY.",
-      "title": "想法很轻。\n把它做出来很实在。",
-      "body": "从前端界面，到本地数据，再到 AI 工具。\n我喜欢弄清楚它们怎么连接，\n也在意最后用起来，是不是真的自然。",
-      "note": "技术力，放在可以亲手体验的东西里。",
-      "link": "打开小鱼，看看她背后的实现",
-      "path": "M52 34 12 80l40 46M128 34l40 46-40 46M106 15 74 145"
+    {
+        "kind": "webnovel",
+        "image": "./assets/collection/webnovel.jpg",
+        "label": "网文",
+        "title": "间客",
+        "caption": "JIAN KE / 猫腻",
+        "note": "喜欢许乐的倔，也喜欢他对朋友的认真。",
+        "placeholder": false
+    },
+    {
+        "kind": "anime",
+        "image": "./assets/collection/anime.jpg",
+        "label": "动漫",
+        "title": "魔笛 MAGI",
+        "caption": "MAGI / THE LABYRINTH OF MAGIC",
+        "note": "迷宫、魔法，还有一个越走越大的世界。",
+        "placeholder": false
+    },
+    {
+        "kind": "film",
+        "image": "./assets/collection/film.jpg",
+        "label": "电影",
+        "title": "情书",
+        "caption": "LOVE LETTER / 岩井俊二",
+        "note": "喜欢它把没说出口的话，藏在借书卡和雪地里。",
+        "placeholder": false
+    },
+    {
+        "kind": "game",
+        "image": "./assets/collection/game.jpg",
+        "label": "游戏",
+        "title": "星际拓荒",
+        "caption": "OUTER WILDS",
+        "note": "想再体验一次，什么都不知道就出发的感觉。",
+        "placeholder": false
     }
-  },
+],
   "openers": [
     {
       "label": "聊技术",
-      "text": "你是怎么把小鱼做出来的？\n我也想做点有意思的东西。"
+      "text": "最近在折腾什么技术？\n我也想做点有意思的东西。"
     },
     {
       "label": "聊想法",

@@ -31,3 +31,11 @@
 ## 逐素材校准
 
 `placements.js` 从一隅现有 `companion.desktop.videoPlacements` 中按本页所用的十个素材 ID 提取 `scale / x / y`，不包含其他应用设置或用户内容。视频使用 9:16 舞台，偏移单位为百分比，变换原点为 `center bottom`，与原校准界面一致。此文件为独立快照；后续在一隅重新校准时可对应更新。
+
+## 桌面形态的鼠标眼神
+
+`assets/desktop-gaze.js` 适配一隅原版（classic）的 `attention.ts`、`animation.ts`、`art/gazeSampling.ts` 和 `art/gazeTexture.ts`：页面指针按当前 Canvas 的显示位置换算到 192×240 逻辑坐标，双眼共用有界椭圆目标，虹膜取自原画，露出的部分用邻近眼白补齐。追随时间常数为 110ms，回正为 550ms；角色内悬停 300ms 后过滤细小抖动，角色外静止六秒后回正。neutral 使用 `freeArtProfiles.ts` 的 pixel 眼部参数，wave／chin 使用 `v2/rig/PoseAppearance.ts` 中对应 PNG 的眼部坐标。
+
+追踪只在小鱼页的桌面形态启用；拖动、睡眠、移出页面或窗口失焦时回正，切换形态、离页和后台清理目标。触摸不作为悬停，减弱动效时静止；现有原画眨眼与姿态切换保留。浏览器读取的是页面内指针，未使用一隅桌面端的系统坐标接口。
+
+为支持直接双击 HTML 的 `file://` 方式，运行时不读取角色 PNG 的 Canvas 像素。`gaze-patches.js` 是从本目录三幅原 PNG 离线提取的半分辨率眼部采样，包含原图 SHA-256；原 PNG 未修改。替换角色原画后可运行 `python scripts/prepare-desktop-gaze.py` 重新生成，脚本只用 Python 标准库。网页无需 Python、构建工具或远程依赖。

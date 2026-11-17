@@ -13,7 +13,7 @@
 .pet-portal>.current-edge .current-edge-ink{stroke:#7b98b5}
 .scene-nav .current-edge .current-edge-ink{stroke:#a2ac8d;stroke-width:.85}
 .fragment-card.is-current-near .fragment-corner{color:#a57a61}
-.pointer-follower>span{border:0;border-radius:0;background:transparent;backdrop-filter:none;box-shadow:none;padding:2px 3px;color:#869987;font-size:8px;letter-spacing:.5px;left:18px;top:28px}
+
 .cursor-shape{filter:drop-shadow(0 1px 1px #3a615220)}
 .fish-body,.fish-tail{fill:#456c60;stroke:#f7f7ee;stroke-width:1}
 .fish-tail{animation-duration:var(--fin-duration,.85s)}
