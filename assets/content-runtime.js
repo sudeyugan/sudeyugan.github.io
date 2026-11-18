@@ -26,7 +26,6 @@
     const greeting=document.querySelector('.contact-heading>p');if(greeting)greeting.textContent=content.copy['contact.greeting'];
     const hello=document.querySelector('.hello-word');if(hello)hello.textContent=content.copy['contact.hello'];
     const friend=document.querySelector('.friend-word');if(friend)friend.firstChild.textContent=content.copy['contact.friend'];
-    document.querySelector('.technical-sheet>p').textContent=content.copy['technical.body'];
     const contactNote=document.querySelector('.scene-contact .scene-kicker>span:last-child');contactNote.lastChild.textContent=' '+content.copy['contact.note'];
     document.querySelectorAll('.site-index>a').forEach(link=>link.children[1].textContent=(content.copy['nav.'+link.hash.slice(1)]||'')+'。');
     document.querySelectorAll('.opener-tabs button').forEach((el,i)=>el.textContent=content.openers[i]?.label||'');

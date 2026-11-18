@@ -27,9 +27,6 @@ window.HOME_CONTENT = {
     "pet.initialSpeech": "你好呀，我是小鱼。",
     "pet.initialDetail": "换一种形象，也可以认识同一个我。",
     "pet.initialState": "在这里，陪你待一会儿。",
-    "technical.title": "可爱的背后，\n也有认真的工程。",
-    "technical.body": "角色只是看得到的那一层。一隅还把 AI、工具和本地应用连接在一起。",
-    "technical.note": "说明依据本地一隅源码与文档。\n这里展示实现思路，不开放真实应用工具。",
     "contact.note": "很高兴，你愿意停留一下。",
     "contact.greeting": "我们可以从一句「你好」开始。",
     "contact.pending": "联系方式还在整理。先记住「苏的鱼干」吧。",
@@ -113,11 +110,6 @@ window.HOME_CONTENT = {
       "label": "随便聊",
       "text": "你好，我路过了你的主页。\n感觉我们可能聊得来。"
     }
-  ],
-  "pipeline": [
-    "原项目支持指针响应、角色动作与语音交互。网页保留轻量的拖动、姿态与陪伴体验。",
-    "模型通过 Tool Registry 使用应用能力。Agent Runtime 编排工具调用，而不是直接访问数据库；语音和动作与交互状态相连。",
-    "工具经过能力、风险和资源范围检查。日记、待办、写作等内容在本地存储，外发数据有独立边界。"
   ],
   "actions": {
     "wave": {
