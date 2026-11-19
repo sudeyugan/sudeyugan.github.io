@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="./assets/collection.css">
   <link rel="stylesheet" href="./assets/contact-match.css">
   <link rel="stylesheet" href="./assets/match-lab.css">
+  <link rel="stylesheet" href="./assets/mobile-chapter.css">
   <script src="./assets/content.js" defer></script>
   <script src="./assets/owner-answers.js" defer></script>
   <script src="./assets/connection-data.js" defer></script>
@@ -42,6 +43,7 @@
   <script src="./assets/fortune-art.js" defer></script>
   <script src="./assets/match-art.js" defer></script>
   <script src="./assets/contact-match.js" defer></script>
+  <script src="./assets/mobile-chapter.js" defer></script>
   <script src="./assets/main.js" defer></script>
 </head>
 <body>
@@ -63,6 +65,10 @@
         <div class="name-baseline"><span class="name-annotation" data-home-letters data-copy="home.english">nice to meet you.</span><button class="signature-handle" type="button" aria-label="拨动名字下的线，拖动或按 Enter"><svg class="signature-line" viewBox="0 0 450 62" aria-hidden="true"><path d="M5 35Q225 5 445 28"/><circle cx="445" cy="28" r="3"/></svg></button><button class="name-reset" type="button"><span data-home-letters>排排好</span><i aria-hidden="true">↺</i></button></div>
         <p class="name-instruction"><span aria-hidden="true">↖</span><span data-home-letters data-copy="home.dragHint">每个字，都可以碰一碰。</span></p>
       </div>
+      <a class="mobile-thread-control" href="#about" aria-label="听一首歌，进入关于我">
+        <span class="mobile-thread-rail" aria-hidden="true"><i></i></span>
+        <span class="mobile-thread-copy"><b>听一首歌</b><span class="mobile-thread-swipe">向上拉 <i aria-hidden="true">↑</i></span><span class="mobile-thread-tap">打开 <i aria-hidden="true">↗</i></span></span>
+      </a>
       <div class="hello-bottom">
         <div class="poster-greeting"><button class="hello-salute" type="button" aria-label="和苏的鱼干打个招呼"><svg viewBox="0 0 190 124" aria-hidden="true"><path class="salute-outline" d="M166 22C192 44 183 77 153 89c-25 11-51 13-77 9L48 116l4-25C10 81 1 55 17 32 36 4 132-4 166 22Z"/><path class="salute-tick" d="m8 5 8 10M34 1l2 10M184 89l-8-4"/></svg><span class="salute-text" aria-hidden="true">嗨！</span><span class="salute-dot" aria-hidden="true"></span></button><div class="greeting-note"><span class="mono" data-home-letters>OH, HELLO THERE.</span><p data-home-letters data-copy="home.invitation">不用客气，随便逛逛。</p></div></div>
         <div class="hello-entries" aria-label="继续认识我">
@@ -109,6 +115,7 @@
         <p class="meet-status" role="status" aria-live="polite"></p>
       </div>
     </section>
+    <canvas class="mobile-thread-canvas" aria-hidden="true"></canvas>
   </main>
 
   <footer class="site-footer"><span class="footer-time mono"><span id="local-time">--:--</span> CST <span class="footer-time-dot">·</span> <span class="scroll-hint">向下滚动，慢慢认识我 ↓</span></span><nav class="scene-nav" aria-label="选择你想看的内容"><a href="#hello" aria-current="page" data-nav="hello"><span class="nav-index">00</span><span class="nav-name" data-copy="nav.hello">你好</span><span class="nav-dot"></span></a><a href="#about" data-nav="about"><span class="nav-index">01</span><span class="nav-name" data-copy="nav.about">关于我</span><span class="nav-dot"></span></a><a href="#xiaoyu" data-nav="xiaoyu"><span class="nav-index">02</span><span class="nav-name" data-copy="nav.xiaoyu">小鱼</span><span class="nav-dot"></span></a><a href="#contact" data-nav="contact"><span class="nav-index">03</span><span class="nav-name" data-copy="nav.contact">认识一下</span><span class="nav-dot"></span></a><span class="nav-active-line"></span><span class="scroll-meter" aria-hidden="true"><i></i></span></nav><button class="motion-toggle" type="button" aria-pressed="false" aria-label="减弱动效"><span class="motion-indicator"><i></i><i></i><i></i></span><span class="motion-label">动效开启</span></button></footer>
